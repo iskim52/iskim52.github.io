@@ -1,4 +1,3 @@
-import { Component } from "react";
 import useStore from "../store";
 
 //style absolute style location
@@ -6,7 +5,6 @@ import '../css/nodeedit.css'
 import '../css/basenode.css';
 
 export default function NodeEditMenu(clickedNode) {
-  console.log('Rerender node edit menu')
   if (clickedNode.clickedNode !== null) {
     return(
       <div
@@ -23,7 +21,7 @@ export default function NodeEditMenu(clickedNode) {
             <div className="nemitem">- [ ] +</div>
             <div className="nemitem">B</div>
             <div className="nemitem">I</div>
-            <div className="nemitem">I</div>
+            <div className="nemitem">U</div>
             <div className="nemitem">A</div>
             <div className="nemitem">Insert Image</div>
             <div className="nemitem">Hyperlink</div>

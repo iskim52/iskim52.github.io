@@ -1,6 +1,6 @@
 //import css
 import 'reactflow/dist/style.css';
-import './index.css';
+import './css/index.css';
 
 //imports from libraries
 import { 

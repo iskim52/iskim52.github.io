@@ -11,9 +11,9 @@ import ReactFlow, {
 import BaseGraphNode from './BaseGraphNode/BaseGraphNode';
 import useStore from './store';
 
-import TurboEdge from './TurboEdge.tsx';
+import TurboEdge from './BaseGraphNode/TurboEdge.tsx';
 import 'reactflow/dist/style.css';
-import './index.css';
+import './css/index.css';
 
 
 const nodeTypes = {

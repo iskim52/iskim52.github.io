@@ -14,10 +14,10 @@ import {
 } from 'reactflow';
 
 //imports from files
-import HeaderMenu from './HeaderMenu/HeaderMenu';
-import WorkFlowView from './WorkFlowView/WorkflowView';
-import Flow from './Flow';
-import useStore from './store';
+import HeaderMenu from '../HeaderMenu/HeaderMenu';
+import WorkFlowView from '../WorkFlowView/WorkflowView';
+import Flow from '../Flow';
+import useStore from '../store';
 
 //set initialization
 const initialNodes = [
