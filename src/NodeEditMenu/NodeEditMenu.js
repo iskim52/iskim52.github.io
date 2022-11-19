@@ -6,6 +6,7 @@ import '../css/nodeedit.css'
 import '../css/basenode.css';
 
 export default function NodeEditMenu(clickedNode) {
+  console.log('Rerender node edit menu')
   if (clickedNode.clickedNode !== null) {
     return(
       <div
@@ -31,5 +32,7 @@ export default function NodeEditMenu(clickedNode) {
         </div>
       </div>
     )
+  } else {
+    return (null)
   }
 }

@@ -22,6 +22,12 @@ const useStore = create((set, get) => ({
     return get().currentid
   },
 
+  onPaneClick: () => {
+    console.log('callback from pane click')
+    set({
+      clickednode:null
+    })
+  },
   setClickedNode: (node) => {
     set({
       clickednode: node

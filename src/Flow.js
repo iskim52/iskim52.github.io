@@ -9,7 +9,6 @@ import ReactFlow, {
 } from 'reactflow';
 
 import BaseGraphNode from './BaseGraphNode/BaseGraphNode';
-import onNodeClick from './NodeEditMenu/onNodeClick';
 import useStore from './store';
 
 import TurboEdge from './TurboEdge.tsx';
@@ -35,13 +34,6 @@ const defaultFitView = {
 
 const DnDFlow = (
   {
-  // nodes, 
-  // onNodesChange, 
-  // edges, 
-  // onEdgesChange, 
-  // onConnect, 
-  // addNode, 
-  // addEdge,
   setClickedNode,
   }
   ) => {
@@ -55,6 +47,7 @@ const DnDFlow = (
     onConnect,
     addNode,
     addEdge,
+    onPaneClick,
   } = useStore();
 
   //set states
@@ -208,6 +201,7 @@ const DnDFlow = (
 						edgeTypes={edgeTypes}
       			defaultEdgeOptions={defaultEdgeOptions}
             onNodeClick={(e, node) => setClickedNode(node.id)}
+            onPaneClick={() => setClickedNode(null)}
           >
           {/* hi */}
         	<Controls />
