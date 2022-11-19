@@ -1,0 +1,76 @@
+/* // CSS classes */
+
+.menuContainer {
+  display:flex;
+}
+
+.szh-menu {
+  font-family: sans-serif;
+  font-size: 0.925rem;
+  user-select: none;
+  box-shadow: 1px 1px 20px 1px rgba(0, 0, 0, 0.1);
+  border-radius: 1px;
+  padding: 6px;
+  min-width: 10rem;
+  background-color:black;
+  color:grey;
+
+  &--state-opening {
+    animation: szh-menu-show 0.15s ease-out;
+  }
+
+  &--state-closing {
+    animation: szh-menu-hide 0.2s ease-out forwards;
+  }
+
+  &__item {
+    border-radius: 6px;
+    padding: 0.375rem 0.625rem;
+    &--hover {
+      color: #fff;
+      background-color: #460026;
+    }
+    &--submenu {
+      position: relative;
+      &::after {
+        position: absolute;
+        width: 7px;
+        right: 0.625rem;
+      }
+    }
+  }
+
+  &__divider {
+    margin: 0.5rem 0.625rem;
+  }
+}
+.szh-menu-button{
+  background-color: black;
+  color: #cad1d8;
+  height:5vh;
+  border-radius:5px;
+  padding-left:10px;
+  padding-right:25px;
+  font-size: 1.2em;
+  font-family: Display, sans-serif;
+}
+
+.szh-menu-button:hover{
+  background-color:rgb(17, 17, 17);
+}
+
+@keyframes szh-menu-show {
+  from {
+    opacity: 0;
+  }
+}
+
+@keyframes szh-menu-hide {
+  to {
+    opacity: 0;
+  }
+}
+
+.menuDivider {
+  color:white;
+}

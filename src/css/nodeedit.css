@@ -1,0 +1,56 @@
+@keyframes rotate {
+  to {
+    --angle: 360deg;
+  }
+}
+
+@property --angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+#nodeEditMenu {
+  position:relative;
+  display: flex;
+  color: white;
+  background-color: rgb(25, 25, 25);
+  font-family: 'Raleway';
+  font-size: 1.5rem;
+  border-bottom: 4px solid transparent;
+  border-right: 0px;
+  box-shadow: 0 3px 9px black;
+  /* padding-top:5px; */
+  /* padding-bottom: 10px; */
+  background-clip:padding-box;
+  border-image: linear-gradient(var(--angle), #12c2e9, #c471ed, #f64f59) 1;
+  animation: 5s rotate linear infinite;
+  z-index: 0;
+}
+.nemContainer {
+  display:flex;
+  flex-direction: column;
+  width:100%;
+  height:100%;
+  flex-wrap:wrap;
+}
+.nemRow{
+  display:flex;
+  flex-direction: row;
+  width:100%;
+  height:100%;
+
+  justify-content: space-evenly;
+}
+.nemitem{
+  /* padding:2px; */
+  height:100%;
+  padding-top:5px;
+  padding-bottom:10px;
+  /* border-left:4px solid; */
+}
+.nemitem:hover{
+  /* background-position: bottom 10px; */
+  /* background-color: rgb(50, 50, 50) */
+  /* background: linear-gradient(90deg, #FFC0CB 50%, #00FFFF 50%); */
+  text-shadow: 0 0 5px #ff0000; 
+}

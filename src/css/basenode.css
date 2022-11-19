@@ -1,0 +1,25 @@
+.edit-button {
+    background: #111111;
+    border:0px;
+    position:absolute;
+    top: 10;   
+    right: 10px; 
+}
+
+.node-edit-save {
+    border:5px;
+    background: #111111;
+}
+
+.node-edit-save:hover {
+    background:#333333;
+}
+
+.node-edit-cancel {
+    border:5px;
+    background: #111111;
+}
+
+.node-edit-cancel:hover {
+    background:#333333;
+}
