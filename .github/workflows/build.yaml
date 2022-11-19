@@ -1,4 +1,4 @@
-name: Deploy static content to Pages
+name: Deploy static content to Pages from build folder
 
 on:
   # Runs on pushes targeting the default branch
@@ -28,14 +28,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout
       - name: Setup Pages
-        uses: actions/configure-pages@v1
+        uses: actions/configure-pages
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v1
+        uses: actions/upload-pages-artifact
         with:
           # Upload entire repository
-          path: './build/.'
+          path: 'build/'
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v1
+        uses: actions/deploy-pages
