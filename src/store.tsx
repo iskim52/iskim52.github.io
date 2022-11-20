@@ -100,12 +100,21 @@ const useStore = create<RFState>((set,get) => ({
     return get().edges.find(edge => edge.id === edgeid)
   },
   setNodeHtml: (node: { id: any; }, htmlString: string) => {
-    set(
-      produce((state) => {
-        const index = state.nodes.findIndex(nodes => nodes.id === node.id);
-        if (index !== -1) state.nodes[index].data.htmlData = htmlString
-      })
-    )
+    // set(
+    //   produce((state) => {
+    //     const index = state.nodes.findIndex(nodes => nodes.id === node.id);
+    //     if (index !== -1) state.nodes[index].data.htmlData = htmlString
+    //   })
+    // )
+    console.log('setting node html')
+    console.log(node)
+    console.log(htmlString)
+    const index = get().nodes.findIndex(nodes => nodes.id === node.id);
+    if (index !== -1)
+      set(produce((state) => {
+        state.nodes[index].data.htmlData = htmlString
+      }), true)
+    console.log(get())
   },
   getNodeHtml: (nodeid: string) => {
     return get().nodes.find(node => node.id === nodeid)?.data.htmlData

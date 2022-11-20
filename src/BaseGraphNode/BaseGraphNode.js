@@ -10,41 +10,31 @@ import '../css/basenode.css';
 
 
 function BaseNode(data, isConnectable){
-	// const { setNodeHtml , getNodeHtml} = useStore();
+	const { setNodeHtml , getNodeHtml} = useStore();
 	// had to put a stupid hack in so that the input box would scale with resize
 	try{
 		let inputBoxHack = document.querySelector("#root > div > div > div > div.react-flow__renderer > div.react-flow__viewport.react-flow__container > div.react-flow__nodes > div.react-flow__node.react-flow__node-graphNode.nopan.selected.selectable > div > div.wrapper.gradient > div > div > div.styles-module_Editext__main_container__2azCD > div")
 		inputBoxHack.style.width = '100%';
 	} catch (e) {}
 
-	// const [value, setValue] = useState(data.data.label);
 	const [height, setHeight] = useState((data.data.size !== undefined) ? data.data.size.height : 150); // default height
   const [width, setWidth] = useState((data.data.size !== undefined) ? data.data.size.width : 300); // default width
-	// const [nodeHtml, setnode] = useState(data.data.htmlData)
 	const onResizeStop = (e, direction, ref, d) => {
     setHeight((prev) => prev + d.height);
     setWidth((prev) => prev + d.width);
 		data.data.size = {height: height, width: width}
 	};
   const handleChange = evt => {
-		// setnode(evt.target.value);
-		// setNodeHtml(data.id, evt.target.value);
-		// data.data.htmlData = evt.target.value;
-		// console.log('nodeid: ', data.id)
-		// console.log('currentValue: ', evt.target.value)
-		// console.log('nodeState: ', nodeHtml)
-		// console.log('currentStore: ', useStore.getState().nodes)
-		data.data.htmlData = evt.target.value;
-		data.data.label = evt.target.value;
+		//fucking took me 9 years to figure out that 
+		//i need to send the entire node instead of just id
+		setNodeHtml(data, evt.target.value); 
   };
   const sanitizeConf = {
     allowedTags: ["div", "b", "i", "em", "strong", "a", "p", "h1"],
     allowedAttributes: { a: ["href"] }
   };
 	const sanitize = () => {
-		// setnode(sanitizeHtml(nodeHtml, sanitizeConf))
-		// setNodeHtml(data.id, sanitizeHtml(nodeHtml, sanitizeConf))
-		data.data.htmlData = sanitizeHtml(data.data.htmlData, sanitizeConf);
+		setNodeHtml(data, sanitizeHtml(getNodeHtml(data.id), sanitizeConf))
   };
 	
 	//if node is doubleclicked - enter edit mode
@@ -53,7 +43,7 @@ function BaseNode(data, isConnectable){
 	if (data.id === clickednode) {
 		clicked = true;
 	}
-
+	// console.log(getNodeHtml(data.id))
   return (
 		// add / remove nodrag on double click
 		<div className={clicked ? "nodrag" : ""}>
@@ -94,7 +84,7 @@ function BaseNode(data, isConnectable){
 							/>
 							<ContentEditable 
 								className="contentEditable"
-								html={data.data.htmlData} // needs to update to pull from store
+								html={getNodeHtml(data.id)}
 								onChange={handleChange}
 								onBlur={sanitize}
 								disabled={clicked ? false : true}

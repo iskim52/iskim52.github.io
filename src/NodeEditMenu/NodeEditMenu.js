@@ -9,11 +9,14 @@ import '../css/basenode.css';
 function EditButton(props) {
   const { clickednode } = useStore()
   
+  
   return (
+
     <div
       className={props.className}
       key={props.cmd}
       onMouseDown={evt => {
+        console.log(document.getSelection())
         evt.preventDefault(); // Avoids loosing focus from the editable area
         
         // Apparently this is deprecrecated but they haven't pushed any other 
