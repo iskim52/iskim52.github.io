@@ -20,13 +20,13 @@
 17.  [X] Create Workflow View to take new structure and display
 18.  [X] Add edit node box
       - [ ] Style edit node box
-19.  [ ] Convert textarea for nodes into editable div
-      - [ ] Update node store to include HTML label and regular label
+19.  [X] Convert textarea for nodes into editable div
+      - [X] Update node store to include HTML label and regular label
 20.  [ ] Add edit node features
-      - [ ] Font Style
+      - [X] Font Style
       - [ ] Font Size
-      - [ ] Bold
-      - [ ] Italic
+      - [X] Bold
+      - [X] Italic
       - [ ] Underline
       - [ ] Text Color
       - [ ] Insert Image
@@ -51,6 +51,8 @@ Bugs:
 - [X] Size doesn't save when json obj is saved.
 	- [X] Size needs to be carried with the node itself.
 	- [ ] Size was already being carried with the node? Might need to go back and undue changes. Leaving it for now since it doesn't really mess with anything. It does however add additional overhead for react to save width/height multiple times, but how much this matters im not sure.
+- [ ] when I update font, it renders previous HTML as text.
+- [ ] When I update font, if I update other options, it discards them
 
 - Prettify
   - Add theming
