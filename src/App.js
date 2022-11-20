@@ -16,12 +16,12 @@ import WorkFlowView from './WorkFlowView/WorkflowView';
 import Flow from './Flow';
 import ContextMenu from './ContextMenu/ContextMenu';
 import NodeEditMenu from './NodeEditMenu/NodeEditMenu';
-import { useStore } from 'zustand';
 
 const App = () => {
   const[displayView, setDisplayView] = useState('Graph');
   const[starterNode, setStarterNode] = useState(null);
   const[clickedNode, setClickedNode] = useState(null)
+  
   if (displayView === 'Graph') {
     return (
       <div className='bigwrapper'>

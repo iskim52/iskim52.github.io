@@ -1,9 +1,11 @@
-import React, {useState} from 'react';
+import React, {useState, useCallback, useRef} from 'react';
 import { Handle , Position} from 'reactflow';
 // import EdiText from 'react-editext'
 import '../css/basenode.css';
 import { Resizable } from "re-resizable";
-
+import ContentEditable from 'react-contenteditable';
+import useStore from '../store';
+import EditableContent from '../SavedCode/editableContent';
 
 function BaseNode(data, isConnectable){
 	// had to put a stupid hack in so that the input box would scale with resize
@@ -12,19 +14,37 @@ function BaseNode(data, isConnectable){
 		inputBoxHack.style.width = '100%';
 	} catch (e) {}
 
-	const [value, setValue] = useState(data.data.label);
-	const [height, setHeight] = useState(150);
-  const [width, setWidth] = useState(300);
-  const onResizeStop = (e, direction, ref, d) => {
+	// const [value, setValue] = useState(data.data.label);
+	const [height, setHeight] = useState((data.data.size !== undefined) ? data.data.size.height : 150); // default height
+  const [width, setWidth] = useState((data.data.size !== undefined) ? data.data.size.width : 300); // default width
+
+	const onResizeStop = (e, direction, ref, d) => {
     setHeight((prev) => prev + d.height);
     setWidth((prev) => prev + d.width);
-		// console.log('width: ', width+d.width+'px')
-		// console.log('inputBox: ', inputBoxHack)
+		data.data.size = {height: height, width: width}
 	};
-
+	
+	// doesn't fix anything so its not the node being draggable.
+	// useStore.getState().turnDraggableOff()
+	// const [htmlData, setHtml] = useState(data.data.htmlData);
+	const htmlData = useRef(data.data.htmlData)
+	const handleBlur = () => {
+    console.log(htmlData.current);
+  };
+  const handleChange = evt => {
+    htmlData.current = evt.target.value;
+  };
+	
+	//if node is doubleclicked - enter edit mode
+	let clicked = false;
+	const {clickednode} = useStore();
+	if (data.id === clickednode) {
+		clicked = true;
+	}
 
   return (
-		<>
+		// add / remove nodrag on double click
+		<div className={clicked ? "nodrag" : ""}>
 			<Resizable
 				size={{ width, height }}
 				onResizeStop={onResizeStop}
@@ -60,25 +80,16 @@ function BaseNode(data, isConnectable){
 								id='left'
 								isConnectable={isConnectable}
 							/>
-							<textarea value={value} onChange={(e) => {setValue(e.target.value); data.data.label = e.target.value}} />
-							{/* <EdiText
-								type='textarea'
-								value={data.data.label}
-								editOnViewClick={true}
-								hideIcons={true}
-								saveButtonContent="✔️"
-								saveButtonClassName='node-edit-save'
-								cancelButtonContent="❌"
-								cancelButtonClassName='node-edit-cancel'
-								editButtonClassName="edit-button"
-								showButtonsOnHover
-								editButtonContent="✏️"
-								// submitOnUnfocus
-								startEditingonFocus
-								// mainContainerClassName='mainEditContainer'
-								buttonsAlign='after'
-								onSave={(val) => {data.data.label = val}}
-							/> */}
+							<ContentEditable 
+								className="contentEditable"
+								html={htmlData.current}
+								onChange={handleChange}
+								onBlur={handleBlur}
+								disabled={clicked ? false : true}
+							/>
+							{/* old variations of attempted editing content in box - missing very first version with some box that had checkmarks */}
+							{/* <EditableContent /> */}
+							{/* <textarea value={value} onChange={(e) => {setValue(e.target.value); data.data.label = e.target.value}} /> */}
 							<Handle
 								type="source"
 								position={Position.Right}
@@ -95,7 +106,7 @@ function BaseNode(data, isConnectable){
 					</div>
 				</div>
 			</Resizable>
-    </>
+    </div>
   );
 };
 

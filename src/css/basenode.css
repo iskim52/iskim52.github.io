@@ -23,3 +23,42 @@
 .node-edit-cancel:hover {
     background:#333333;
 }
+
+/* edittext css */
+.contentEditable {
+    background: rgba(29, 34, 37, 0);
+    color: #F4C361;
+    width: 100%;
+    height:100%;
+    font-size: 1.5em;
+    position:relative;
+    flex-direction:row;
+    outline:none;
+    resize:none;
+    border:none;
+    overflow-y: auto; /* need to fix: show only when text is past limit*/
+    overflow-wrap:anywhere;
+  }
+  
+.contentEditable::-webkit-scrollbar-track{
+    background-color: black;
+    border-radius:10px;
+    cursor:grab;
+}
+.contentEditable::-webkit-scrollbar{
+    width: 10px;
+    border-radius:10px;
+    background-color: #111111;
+    cursor:grab;
+}
+.contentEditable::-webkit-scrollbar-thumb{
+    border-radius: 10px;
+    width:2px;
+    /* box-shadow: 1px 0px 4px 4px grey; */
+    background-color: rgba(68, 68, 68, 0.75);
+    cursor:grab;
+}
+
+.nodrag {
+    cursor:auto;
+}

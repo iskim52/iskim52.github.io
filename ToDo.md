@@ -48,7 +48,9 @@ Bugs:
 - [X] None of the file options work from workflow view
   - Need to pull out header menu from flow and refactor to pass graph state from top level
 - [ ] Fix context add node to drop on cursor position
-
+- [X] Size doesn't save when json obj is saved.
+	- [X] Size needs to be carried with the node itself.
+	- [ ] Size was already being carried with the node? Might need to go back and undue changes. Leaving it for now since it doesn't really mess with anything. It does however add additional overhead for react to save width/height multiple times, but how much this matters im not sure.
 
 - Prettify
   - Add theming

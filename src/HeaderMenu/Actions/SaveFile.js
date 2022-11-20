@@ -1,7 +1,8 @@
 import useStore from "../../store";
 
 export default function SaveFile() {
-  let saveObj = useStore((state) => state.toObject)
+  // let saveObj = useStore((state) => state.toObject)
+  let saveObj = useStore.getState().toObject();
   var dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(saveObj));
   var downloadAnchorNode = document.createElement('a');
   downloadAnchorNode.setAttribute("href",     dataStr);

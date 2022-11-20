@@ -11,7 +11,8 @@ const useStore = create((set, get) => ({
   currentid: initialNodes.length,
   clickednode: null,
 
-  // test comment
+
+
   increaseId: () => {
     set({
       currentid: get().currentid + 1
@@ -32,10 +33,12 @@ const useStore = create((set, get) => ({
     set({
       clickednode: node
     })
-    console.log(get().clickednode)
   },
   getClickedNode:() => {
     return get().clickednode
+  },
+  setDoubleClickedNode:(node) => {
+    set((state) => ({clickednode:node}));
   },
 
   onNodesChange: changes => {
@@ -79,7 +82,6 @@ const useStore = create((set, get) => ({
   },
   deleteElements: (elements) => {
     // If removing nodes; also removes connecting edges
-    console.log(elements)
     let delEdges = []
     if (elements.nodes !== [null]){
       for (let i=0; i < elements.nodes.length; i++) {

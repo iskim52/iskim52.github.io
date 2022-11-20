@@ -4,8 +4,10 @@ import useStore from "../store";
 import '../css/nodeedit.css'
 import '../css/basenode.css';
 
-export default function NodeEditMenu(clickedNode) {
-  if (clickedNode.clickedNode !== null) {
+export default function NodeEditMenu() {
+  const { clickednode } = useStore()
+
+  if (clickednode !== null) {
     return(
       <div
         id="nodeEditMenu"
@@ -16,7 +18,7 @@ export default function NodeEditMenu(clickedNode) {
       }}>
         <div className="nemContainer">
           <div className="nemRow"> 
-            <div className="nemitem">Node ID: {clickedNode.clickedNode}</div>
+            <div className="nemitem">Node ID: {clickednode}</div>
             <div className="nemitem">Font Dropdown</div>
             <div className="nemitem">- [ ] +</div>
             <div className="nemitem">B</div>
