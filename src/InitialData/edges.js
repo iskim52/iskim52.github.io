@@ -1,10 +1,3 @@
-const initialEdges = [
-  {
-    id: '1',
-    source: '1',
-    target: '2',
-    targetHandle: 'left'
-  },
-];
+const initialEdges = [{"type":"turbo","markerEnd":"edge-circle","source":"1","sourceHandle":"bottom","target":"2","targetHandle":"top","id":"reactflow__edge-1bottom-2top"},{"id":"3","source":"2","target":"3","sourceHandle":"bottom","targetHandle":"top"},{"id":"4","source":"2","target":"4","sourceHandle":"bottom","targetHandle":"top"},{"id":"5","source":"3","target":"5","sourceHandle":"bottom","targetHandle":"top"},{"type":"turbo","markerEnd":"edge-circle","source":"4","sourceHandle":"bottom","target":"5","targetHandle":"top","id":"reactflow__edge-4bottom-5top"},{"id":"6","source":"5","target":"6","sourceHandle":"bottom","targetHandle":"top"},{"type":"turbo","markerEnd":"edge-circle","source":"5","sourceHandle":"right","target":"8","targetHandle":"left","id":"reactflow__edge-5right-8left"},{"id":"11","source":"6","target":"11","sourceHandle":"bottom","targetHandle":"top"},{"id":"12","source":"11","target":"12","sourceHandle":"bottom","targetHandle":"top"},{"id":"13","source":"12","target":"13","sourceHandle":"right","targetHandle":"left"},{"id":"15","source":"14","target":"15","sourceHandle":"bottom","targetHandle":"top"},{"id":"16","source":"14","target":"16","sourceHandle":"right","targetHandle":"left"},{"id":"17","source":"17","target":"14","sourceHandle":"right","targetHandle":"left"},{"id":"18","source":"16","target":"18","sourceHandle":"right","targetHandle":"left"},{"id":"19","source":"18","target":"19","sourceHandle":"right","targetHandle":"left"},{"id":"20","source":"18","target":"20","sourceHandle":"right","targetHandle":"left"},{"id":"21","source":"15","target":"21","sourceHandle":"bottom","targetHandle":"top"},{"id":"23","source":"13","target":"23","sourceHandle":"right","targetHandle":"left"},{"id":"24","source":"19","target":"24","sourceHandle":"right","targetHandle":"left"},{"id":"25","source":"12","target":"25","sourceHandle":"bottom","targetHandle":"top"}]
 
 export default initialEdges;
