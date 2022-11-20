@@ -53,7 +53,9 @@ Bugs:
 	- [ ] Size was already being carried with the node? Might need to go back and undue changes. Leaving it for now since it doesn't really mess with anything. It does however add additional overhead for react to save width/height multiple times, but how much this matters im not sure.
 - [ ] when I update font, it renders previous HTML as text.
 - [ ] When I update font, if I update other options, it discards them
-
+		- [ ] Fix sanitize function in BaseGraphNodes. This should fix these problems
+- [ ] Problems when saving graph where when you reopen it. It doesn't look quite right. Why is this happening?
+      - [ ] Found error last night and commented it, go look for it.
 - Prettify
   - Add theming
 - Drag and Drop aesthetic functions

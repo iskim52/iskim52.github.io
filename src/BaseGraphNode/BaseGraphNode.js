@@ -44,7 +44,10 @@ function BaseNode(data, isConnectable){
     allowedAttributes: { a: ["href"] }
   };
 	const sanitize = () => {
-    data.data.htmlData = sanitizeHtml(data.data.htmlData, sanitizeConf);
+		//needs to be updated to commit directly without being fucked
+		//however I'm doing it in update font is correct.
+		//This is wrong
+    data.data.htmlData = sanitizeHtml(data.data.htmlData, sanitizeConf); // this is read only so it doesn't want to update correctly.
   };
 	
 	//if node is doubleclicked - enter edit mode

@@ -7,6 +7,8 @@ import '../css/nodeedit.css'
 import '../css/basenode.css';
 
 function EditButton(props) {
+  const { clickednode } = useStore()
+  
   return (
     <div
       className={props.className}

@@ -87,32 +87,34 @@ const useStore = create((set, get) => ({
       edges: []
     });
   },
-  deleteElements: (elements) => {
-    // If removing nodes; also removes connecting edges
+  deleteElements: (elements: { nodes: any[]; edges: any[]; }) => {
+    // if you remove a node with no edges; it removes all edges
     let delEdges = []
-    if (elements.nodes !== [null]){
+    if (elements.nodes[0] !== null){
       for (let i=0; i < elements.nodes.length; i++) {
         delEdges = delEdges.concat(
-          get().edges.filter(edge =>
+          get().edges.filter((edge: { source: string; target: string; }) =>
             String(elements.nodes[i]) === edge.source ||
             String(elements.nodes[i]) === edge.target
-          ).map(edge => edge.id)
+          ).map((edge: { id: any; }) => edge.id)
         )
       }
-      if (elements.edges === [null]){
-        elements.edges = delEdges;
+      if (elements.edges[0] === null){
+        elements.edges = (delEdges.length === 0 ? [null] : delEdges);
       } else {
         elements.edges = elements.edges.concat(delEdges);
       }
+      console.log(elements.edges)
+
         
     }
     set({
-      nodes:  get().nodes.filter((node) =>  {
+      nodes:  get().nodes.filter((node: { id: any; }) =>  {
                 return elements.nodes.some((nodeid) => {
                   return nodeid !== node.id;
                 })
               }),
-      edges:  get().edges.filter((edge) =>  {
+      edges:  get().edges.filter((edge: { id: any; }) =>  {
                 return elements.edges.concat(delEdges).some((edgeid) => {
                   return edgeid !== edge.id;
                 })
