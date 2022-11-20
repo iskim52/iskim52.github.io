@@ -1,4 +1,4 @@
-import useStore from "../../store"
+import useStore from "../../store.tsx"
 
 export default function NewFile() {
   //add are you sure panel

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import useStore from '../store';
+import useStore from '../store.tsx';
 
 class ContextMenu extends Component {
 	constructor(props) {

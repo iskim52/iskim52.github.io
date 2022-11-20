@@ -1,6 +1,6 @@
 import create from "zustand"
 import { addEdge, applyNodeChanges, applyEdgeChanges } from "reactflow"
-
+import produce from 'immer';
 import initialNodes from "./InitialData/nodes"
 import initialEdges from './InitialData/edges';
 
@@ -74,6 +74,13 @@ const useStore = create((set, get) => ({
   getEdge: edgeid => {
     return get().edges.find(edge => edge.id === edgeid)
   },
+  setNodeHtml: (node, htmlString) => {
+    set(produce((state, State) => {
+      const index = state.nodes.findIndex(nodes => nodes.id === node.id);
+      if (index !== -1) state.nodes[index].data.htmlData = htmlString
+    }))
+  },
+
   deleteEverything: (state) => {
     set({
       nodes: [],

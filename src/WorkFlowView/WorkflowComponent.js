@@ -1,5 +1,5 @@
 import { Component } from "react";
-import useStore from "../store";
+import useStore from "../store.tsx";
 import '../css/workflow.css'
 
 

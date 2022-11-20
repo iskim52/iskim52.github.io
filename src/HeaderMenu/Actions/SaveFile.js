@@ -1,4 +1,4 @@
-import useStore from "../../store";
+import useStore from "../../store.tsx";
 
 export default function SaveFile() {
   // let saveObj = useStore((state) => state.toObject)

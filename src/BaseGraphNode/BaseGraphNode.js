@@ -1,11 +1,17 @@
-import React, {useState, useCallback, useRef} from 'react';
+import React, {useState} from 'react';
 import { Handle , Position} from 'reactflow';
-// import EdiText from 'react-editext'
-import '../css/basenode.css';
+
 import { Resizable } from "re-resizable";
 import ContentEditable from 'react-contenteditable';
-import useStore from '../store';
-import EditableContent from '../SavedCode/editableContent';
+import sanitizeHtml from "sanitize-html";
+
+import useStore from '../store.tsx';
+// import useStore from '../store';
+// import EditContent from '../NodeEditMenu/EditContent';
+
+import '../css/basenode.css';
+
+import FontSelector from '../NodeEditMenu/fontsSelector';
 
 function BaseNode(data, isConnectable){
 	// had to put a stupid hack in so that the input box would scale with resize
@@ -27,12 +33,18 @@ function BaseNode(data, isConnectable){
 	// doesn't fix anything so its not the node being draggable.
 	// useStore.getState().turnDraggableOff()
 	// const [htmlData, setHtml] = useState(data.data.htmlData);
-	const htmlData = useRef(data.data.htmlData)
-	const handleBlur = () => {
-    console.log(htmlData.current);
-  };
+	// const htmlData = useRef(data.data.htmlData)
+	// const handleBlur = () => {};
   const handleChange = evt => {
-    htmlData.current = evt.target.value;
+    data.data.htmlData = evt.target.value;
+		data.data.label = evt.target.value;
+  };
+  const sanitizeConf = {
+    allowedTags: ["b", "i", "em", "strong", "a", "p", "h1"],
+    allowedAttributes: { a: ["href"] }
+  };
+	const sanitize = () => {
+    data.data.htmlData = sanitizeHtml(data.data.htmlData, sanitizeConf);
   };
 	
 	//if node is doubleclicked - enter edit mode
@@ -82,11 +94,12 @@ function BaseNode(data, isConnectable){
 							/>
 							<ContentEditable 
 								className="contentEditable"
-								html={htmlData.current}
+								html={data.data.htmlData}
 								onChange={handleChange}
-								onBlur={handleBlur}
+								onBlur={sanitize}
 								disabled={clicked ? false : true}
 							/>
+							{/* <EditContent data={data} disabled={clicked ? false : true}/> */}
 							{/* old variations of attempted editing content in box - missing very first version with some box that had checkmarks */}
 							{/* <EditableContent /> */}
 							{/* <textarea value={value} onChange={(e) => {setValue(e.target.value); data.data.label = e.target.value}} /> */}
