@@ -41,6 +41,8 @@
 24.  [ ] Add tutorial
 25.  [ ] Add Contact me
 26.  [ ] Send to chrome extension
+27.  [ ] Implement Immer
+28.  [ ] Refactor store to be tsx with immer
 
 Bugs:
 - [X] When going to graph view from workflow view nodes reset. Why? 

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import ReactDOMServer from 'react-dom/server'
 import Select from 'react-select';
+import HTMLString from 'react-html-string';
 
 import useStore from '../store.tsx';
 
@@ -31,7 +32,7 @@ const fontOptions = [
 
 
 export default function FontSelector() {
-  const [selectedOption, setSelectedOption] = useState(null);
+  const [selectedOption, ] = useState(null);
   const {getNode, clickednode, setNodeHtml} = useStore();
 
   function selectOption(evt) {
@@ -43,9 +44,10 @@ export default function FontSelector() {
       let start = node.data.htmlData.indexOf('>') + 1
       let end = node.data.htmlData.indexOf('</div>')
       let strippedString = node.data.htmlData.slice(start,end)
-      htmlString = ReactDOMServer.renderToString(<div style={{fontFamily:evt.label}}>{strippedString}</div>)
+      console.log(strippedString);
+      htmlString = ReactDOMServer.renderToString(<div style={{fontFamily:evt.label}}>{<HTMLString html={strippedString}/>}</div>)
     } else {
-      htmlString = ReactDOMServer.renderToString(<div style={{fontFamily:evt.label}}>{node.data.htmlData}</div>)
+      htmlString = ReactDOMServer.renderToString(<div style={{fontFamily:evt.label}}>{<HTMLString html={node.data.htmlData}/>}</div>)
     }
     setNodeHtml(node, htmlString);
     console.log(useStore.getState())

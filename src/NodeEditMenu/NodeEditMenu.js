@@ -19,6 +19,8 @@ function EditButton(props) {
         // Apparently this is deprecrecated but they haven't pushed any other 
         // replacements and the world will end up in WW3 is they get rid of it.
         document.execCommand(props.cmd, false, props.arg); 
+        // needs to update store with new html
+        
       }}
     >
       {props.name || props.cmd}

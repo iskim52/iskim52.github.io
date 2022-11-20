@@ -1,9 +1,9 @@
-import React from "react";
+import React, {Component} from "react";
 import ContentEditable from "react-contenteditable";
 import sanitizeHtml from "sanitize-html";
-import useStore from "../store";
+import useStore from "../store.tsx";
 
-export default class EditContent extends React.Component {
+export default class EditContent extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -14,7 +14,12 @@ export default class EditContent extends React.Component {
     };
   }
   handleChange = evt => {
-    this.setState({ html: evt.target.value });
+    console.log('are you triggering')
+    // this.setState({ html: evt.target.value });
+    // console.log(this.state)
+    // const {clickednode, setNodeHtml} = useStore();
+    // setNodeHtml(clickednode, evt.target.value)
+    // console.log(useStore.getState())
   };
 
   sanitizeConf = {

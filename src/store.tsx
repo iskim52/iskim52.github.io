@@ -14,6 +14,7 @@ import {
   OnConnect,
   applyNodeChanges,
   applyEdgeChanges,
+  getRectOfNodes,
 } from 'reactflow';
 
 import initialNodes from "./InitialData/nodes"
@@ -105,6 +106,9 @@ const useStore = create<RFState>((set,get) => ({
         if (index !== -1) state.nodes[index].data.htmlData = htmlString
       })
     )
+  },
+  getNodeHtml: (nodeid: string) => {
+    return get().nodes.find(node => node.id === nodeid)?.data.htmlData
   },
 
   deleteEverything: () => {
