@@ -97,7 +97,7 @@ class ContextMenu extends Component {
 
 	//if I add a node via right click; then delete that node; it deletes all edges
 	deleteNode = (e) => {
-		useStore.getState().deleteElements({nodes:[this.state.node], edges:[null]});
+		useStore.getState().deleteElements({nodes:[this.state.node], edges:[null]}); // why is this not sending an edge list of null
 		this.setState({
 			xPos: "0px",
 			yPos: "0px",

@@ -1,6 +1,9 @@
+import HTMLString from 'react-html-string';
+
 import useStore from "../store.tsx";
 import FontSelector from "./fontsSelector"
-// import MyComponent from "../InitialData/fontsSelector";
+import FontSize from './fontSize';
+
 
 //style absolute style location
 import '../css/nodeedit.css'
@@ -12,14 +15,16 @@ function EditButton(props) {
       className={props.className}
       key={props.cmd}
       onMouseDown={evt => {
+        console.log(document.getSelection())
         evt.preventDefault(); // Avoids loosing focus from the editable area
-        
+
         // Apparently this is deprecrecated but they haven't pushed any other 
         // replacements and the world will end up in WW3 is they get rid of it.
         document.execCommand(props.cmd, false, props.arg); 
+        // needs to update store with new html     
       }}
     >
-      {props.name || props.cmd}
+      {<HTMLString html={props.name} /> || props.cmd}
     </div>
   );
 }
@@ -29,18 +34,10 @@ export default function NodeEditMenu() {
 
   if (clickednode !== null) {
     return(
-      <div
-        id="nodeEditMenu"
-        // style={{
-        //   display: 'flex',
-        //   position: 'relative',
-        //   width: '100%',
-        // }}
-        >
-
+      <div id="nodeEditMenu">
         <div className="nemContainer">
           <div className="nemNodeid">Node ID: {clickednode}</div>
-          {/* <div className="nemitem">Font Dropdown</div>
+          {/* 
           <div className="nemitem">- [ ] +</div>
           <div className="nemitem">B</div>
           <div className="nemitem">I</div>
@@ -50,18 +47,25 @@ export default function NodeEditMenu() {
           <div className="nemitem">Hyperlink</div>
           <div className="nemitem">Background Color</div> */}
 
-          {/* <EditButton className="nemitem" cmd="fontName" /> */}
-
-          {/* add styling to select */}
           <FontSelector />
-          <EditButton className="nemitem" cmd="italic" />
-          <EditButton className="nemitem" cmd="bold" />
-          <EditButton className="nemitem" cmd="formatBlock" arg="h1" name="heading" />
+          <FontSize />
+          <EditButton className="nemitem" cmd="bold" name="<b>B</b>" />
+          <EditButton className="nemitem" cmd="italic" name="<i> I </i>"/> 
+          <EditButton className="nemitem" cmd="underline" name="<u> U </u>" />
+          {/* Find Color Pickers */}
+          <EditButton className="nemitem" cmd="textcolor" name="Text Color" /> 
+          <EditButton className="nemitem" cmd="backgroundcolor" name="Background Color" />
           <EditButton
             className="nemitem"
             cmd="createLink"
             arg="https://github.com/lovasoa/react-contenteditable"
-            name="hyperlink"
+            name="Insert Hyperlink"
+          />
+          <EditButton
+            className="nemitem"
+            cmd="createImage"
+            arg="https://image.url"
+            name="Insert Image"
           />
         </div>
       </div>
