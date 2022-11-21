@@ -207,8 +207,8 @@ const DnDFlow = (
             onNodeDoubleClick={(e, node) => setDoubleClickedNode(node.id)}
             onPaneClick={() => setDoubleClickedNode(null)}
 
-            fitViewOptions={defaultFitView}
-            fitView
+            // fitViewOptions={defaultFitView}
+            // fitView
             minZoom = {.2}
           >
           {/* hi */}

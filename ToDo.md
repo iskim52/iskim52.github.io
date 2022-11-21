@@ -41,23 +41,23 @@
 24.  [ ] Add tutorial
 25.  [ ] Add Contact me
 26.  [ ] Send to chrome extension
-27.  [ ] Implement Immer
-28.  [ ] Refactor store to be tsx with immer
+27.  [X] Implement Immer
+28.  [X] Refactor store to be tsx with immer
 
 Bugs:
 - [X] When going to graph view from workflow view nodes reset. Why? 
   - When swapping back to graph view it uses a set of initial nodes that is redeclared when swapping back. Need to figure out how to save state going back and forth
 - [X] None of the file options work from workflow view
   - Need to pull out header menu from flow and refactor to pass graph state from top level
-- [ ] Fix context add node to drop on cursor position
+- [ ] Fix contextmenu add node to drop on cursor position
 - [X] Size doesn't save when json obj is saved.
 	- [X] Size needs to be carried with the node itself.
 	- [ ] Size was already being carried with the node? Might need to go back and undue changes. Leaving it for now since it doesn't really mess with anything. It does however add additional overhead for react to save width/height multiple times, but how much this matters im not sure.
-- [ ] when I update font, it renders previous HTML as text.
-- [ ] When I update font, if I update other options, it discards them
-		- [ ] Fix sanitize function in BaseGraphNodes. This should fix these problems
+- [X] when I update font, it renders previous HTML as text.
+- [X] When I update font, if I update other options, it discards them
 - [ ] Problems when saving graph where when you reopen it. It doesn't look quite right. Why is this happening?
       - [ ] Found error last night and commented it, go look for it.
+
 - Prettify
   - Add theming
 - Drag and Drop aesthetic functions

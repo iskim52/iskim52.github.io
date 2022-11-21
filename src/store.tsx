@@ -14,7 +14,6 @@ import {
   OnConnect,
   applyNodeChanges,
   applyEdgeChanges,
-  getRectOfNodes,
 } from 'reactflow';
 
 import initialNodes from "./InitialData/nodes"
@@ -106,9 +105,6 @@ const useStore = create<RFState>((set,get) => ({
     //     if (index !== -1) state.nodes[index].data.htmlData = htmlString
     //   })
     // )
-    console.log('setting node html')
-    console.log(node)
-    console.log(htmlString)
     const index = get().nodes.findIndex(nodes => nodes.id === node.id);
     if (index !== -1)
       set(produce((state) => {
