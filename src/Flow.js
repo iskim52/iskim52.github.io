@@ -10,10 +10,8 @@ import ReactFlow, {
 
 import BaseGraphNode from './BaseGraphNode/BaseGraphNode';
 import useStore from './store.tsx';
-
 import TurboEdge from './BaseGraphNode/TurboEdge.tsx';
-import 'reactflow/dist/style.css';
-import './css/index.css';
+
 
 
 const nodeTypes = {

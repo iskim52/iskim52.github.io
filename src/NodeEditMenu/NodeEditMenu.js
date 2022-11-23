@@ -5,10 +5,6 @@ import FontSelector from "./fontsSelector"
 import FontSize from './fontSize';
 
 
-//style absolute style location
-import '../css/nodeedit.css'
-import '../css/basenode.css';
-
 function EditButton(props) {
   return (
     <div

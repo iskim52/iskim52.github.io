@@ -6,7 +6,6 @@ import sanitizeHtml from "sanitize-html";
 
 import useStore from '../store.tsx';
 
-import '../css/basenode.css';
 
 
 function BaseNode(data, isConnectable){
@@ -27,6 +26,7 @@ function BaseNode(data, isConnectable){
   const handleChange = evt => {
 		//fucking took me 9 years to figure out that 
 		//i need to send the entire node instead of just id
+		console.log(evt.target.value)
 		setNodeHtml(data, evt.target.value); 
   };
   const sanitizeConf = {

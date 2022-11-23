@@ -29,6 +29,9 @@ type RFState = {
   onNodesChange: OnNodesChange;
   onEdgesChange: OnEdgesChange;
   onConnect: OnConnect;
+  backgroundTheme: string;
+  nodeTheme: string;
+  headerTheme: string;
 };
 
 const useStore = create<RFState>((set,get) => ({
@@ -36,7 +39,25 @@ const useStore = create<RFState>((set,get) => ({
   edges: initialEdges,
   currentid: initialNodes.length,
   clickednode: null,
+  backgroundTheme: './css/index.css',
+  nodeTheme: './css/basenode.css',
+  headerTheme: '../css/headermenu/headermenu-dark.scss',
 
+  setNodeTheme: (style: any) => {
+    set({
+      nodeTheme: style
+    })
+  },
+  setBackgroundTheme: (style: any) => {
+    set({
+      backgroundTheme: style
+    })
+  },
+  setHeaderTheme: (style: any) => {
+    set({
+      headerTheme: style
+    })
+  },  
 
   increaseId: () => {
     set({

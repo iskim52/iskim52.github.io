@@ -1,7 +1,3 @@
-//import css
-import 'reactflow/dist/style.css';
-import './css/index.css';
-
 //imports from libraries
 import { 
   useState, 
