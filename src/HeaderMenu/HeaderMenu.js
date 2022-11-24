@@ -15,7 +15,7 @@ import useStore from '../store.tsx';
 
 export default function HeaderMenu(props) {
   let setDisplayView = props.setDisplayView
-  const {headerTheme, setHeaderTheme, setGradientOn} = useStore();
+  const {headerTheme, setHeaderTheme, setGradientOn, setBackgroundOn, backgroundOn} = useStore();
 
   return (
     <div className="menuContainer">
@@ -45,7 +45,10 @@ export default function HeaderMenu(props) {
             }}>
             Workflow View
           </MenuItem>
-          {/* <MenuItem>Node Edit View</MenuItem> */}
+          <MenuDivider className="menuDivider" />
+          <MenuItem onClick={() => setBackgroundOn(!backgroundOn)}>
+            Turn Background On
+          </MenuItem>
       </Menu>
       <Menu 
         menuButton={<MenuButton className={"menu-btn-" + headerTheme}>🎨 Themes</MenuButton>}

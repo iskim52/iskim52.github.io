@@ -1,5 +1,5 @@
 import React from 'react';
-import { EdgeProps, getBezierPath, getStraightPath } from 'reactflow';
+import { EdgeProps, getBezierPath } from 'reactflow';
 import useStore from '../store.tsx';
 
 

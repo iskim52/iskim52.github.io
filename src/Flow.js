@@ -38,6 +38,7 @@ const Flow = () => {
     setDoubleClickedNode,
     clickednode,
     headerTheme,
+    backgroundOn,
   } = useStore();
 
   //set states
@@ -195,11 +196,9 @@ const Flow = () => {
         onNodeDoubleClick={(e, node) => setDoubleClickedNode(node.id)}
         onPaneClick={() => setDoubleClickedNode(null)}
 
-        // fitViewOptions={defaultFitView}
-        // fitView
         minZoom = {.2}
       >
-        <Background />
+        {backgroundOn ? <Background /> : <div></div>}
         <Controls />
         <svg>
           <defs>

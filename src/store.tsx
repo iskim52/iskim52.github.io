@@ -31,6 +31,7 @@ type RFState = {
   onConnect: OnConnect;
   gradientOn: string;
   headerTheme: string;
+  backgroundOn: boolean;
 };
 
 const useStore = create<RFState>((set,get) => ({
@@ -40,7 +41,13 @@ const useStore = create<RFState>((set,get) => ({
   clickednode: null,
   gradientOn: 'on',
   headerTheme: 'dark',
+  backgroundOn: false,
 
+  setBackgroundOn: (status: boolean) => {
+    set({
+      backgroundOn: status
+    })
+  },
   setGradientOn: (status: any) => {
     set({
       gradientOn: status
