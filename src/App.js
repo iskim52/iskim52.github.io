@@ -1,6 +1,7 @@
 //imports from libraries
 import { 
   useState, 
+  useEffect,
 } from 'react';
 import {
   ReactFlowProvider,
@@ -19,6 +20,10 @@ const App = () => {
   const[starterNode, setStarterNode] = useState(null);
   const[clickedNode, setClickedNode] = useState(null)
   const {headerTheme} = useStore();
+
+  useEffect(() => {
+    document.title = 'GraphFlow';
+  }, []);
   
   if (displayView === 'Graph') {
     return (
