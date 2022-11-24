@@ -29,6 +29,8 @@ type RFState = {
   onNodesChange: OnNodesChange;
   onEdgesChange: OnEdgesChange;
   onConnect: OnConnect;
+  gradientOn: string;
+  headerTheme: string;
 };
 
 const useStore = create<RFState>((set,get) => ({
@@ -36,7 +38,19 @@ const useStore = create<RFState>((set,get) => ({
   edges: initialEdges,
   currentid: initialNodes.length,
   clickednode: null,
+  gradientOn: 'on',
+  headerTheme: 'dark',
 
+  setGradientOn: (status: any) => {
+    set({
+      gradientOn: status
+    })
+  },
+  setHeaderTheme: (style: any) => {
+    set({
+      headerTheme: style
+    })
+  },  
 
   increaseId: () => {
     set({

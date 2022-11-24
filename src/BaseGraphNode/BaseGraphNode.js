@@ -6,11 +6,10 @@ import sanitizeHtml from "sanitize-html";
 
 import useStore from '../store.tsx';
 
-import '../css/basenode.css';
 
 
 function BaseNode(data, isConnectable){
-	const { setNodeHtml , getNodeHtml} = useStore();
+	const { setNodeHtml , getNodeHtml, headerTheme, gradientOn} = useStore();
 	// had to put a stupid hack in so that the input box would scale with resize
 	try{
 		let inputBoxHack = document.querySelector("#root > div > div > div > div.react-flow__renderer > div.react-flow__viewport.react-flow__container > div.react-flow__nodes > div.react-flow__node.react-flow__node-graphNode.nopan.selected.selectable > div > div.wrapper.gradient > div > div > div.styles-module_Editext__main_container__2azCD > div")
@@ -27,6 +26,7 @@ function BaseNode(data, isConnectable){
   const handleChange = evt => {
 		//fucking took me 9 years to figure out that 
 		//i need to send the entire node instead of just id
+		console.log(evt.target.value)
 		setNodeHtml(data, evt.target.value); 
   };
   const sanitizeConf = {
@@ -43,7 +43,6 @@ function BaseNode(data, isConnectable){
 	if (data.id === clickednode) {
 		clicked = true;
 	}
-	// console.log(getNodeHtml(data.id))
   return (
 		// add / remove nodrag on double click
 		<div className={clicked ? "nodrag" : ""}>
@@ -66,8 +65,8 @@ function BaseNode(data, isConnectable){
 
 				}
 			>
-				<div className="wrapper gradient">
-					<div className="inner">
+				<div className={"node-box-shadow-" + headerTheme + " wrapper gradient-"+ headerTheme +'-'+gradientOn}>
+					<div className={"inner " + headerTheme}>
 						<div className="body">
 							<Handle
 								type="target"

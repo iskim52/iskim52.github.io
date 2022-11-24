@@ -1,6 +1,5 @@
 # To Do
 
-
 1.   [X] Install WSL
 2.   [X] Install React
 3.   [X] Run through react tutorial
@@ -57,6 +56,8 @@ Bugs:
 - [X] When I update font, if I update other options, it discards them
 - [ ] Problems when saving graph where when you reopen it. It doesn't look quite right. Why is this happening?
       - [ ] Found error last night and commented it, go look for it.
+- [ ] Node resizer breaks after using node edit menu.
+- [ ] Adding additional elements to node html removes font
 
 - Prettify
   - Add theming

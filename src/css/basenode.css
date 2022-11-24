@@ -1,33 +1,11 @@
-.edit-button {
-    background: #111111;
-    border:0px;
-    position:absolute;
-    top: 10;   
-    right: 10px; 
+.nodrag {
+    cursor:auto;
 }
 
-.node-edit-save {
-    border:5px;
-    background: #111111;
-}
 
-.node-edit-save:hover {
-    background:#333333;
-}
-
-.node-edit-cancel {
-    border:5px;
-    background: #111111;
-}
-
-.node-edit-cancel:hover {
-    background:#333333;
-}
-
-/* edittext css */
+/* internal node css */
 .contentEditable {
     background: rgba(29, 34, 37, 0);
-    color: #F4C361;
     width: 100%;
     height:100%;
     font-size: 1.5em;
@@ -39,7 +17,6 @@
     overflow-y: auto; /* need to fix: show only when text is past limit*/
     overflow-wrap:anywhere;
   }
-  
 .contentEditable::-webkit-scrollbar-track{
     background-color: black;
     border-radius:10px;
@@ -59,6 +36,288 @@
     cursor:grab;
 }
 
-.nodrag {
-    cursor:auto;
+
+
+
+/* external node css */
+.react-flow__node-graphNode {
+    border-radius: var(--node-border-radius);
+    display: flex;
+    min-width: 150px;
+    font-family: 'Fira Mono', Monospace;
+    font-weight: 500;
+    letter-spacing: -0.2px;
+}
+.node-box-shadow-dark{
+	box-shadow: var(--node-box-shadow);
+}
+.node-box-shadow-neo{
+	box-shadow: 10px 0 15px rgba(41, 245, 0, 0.3), 
+						 -10px 0 15px rgba(21, 255, 0, 0.616);
+}
+.node-box-shadow-light{
+	box-shadow: 10px 0 15px rgba(34, 34, 34, 0.3), 
+						 -10px 0 15px rgba(102, 102, 102, 0.616);
+}
+.react-flow__node-graphNode .wrapper {
+	overflow: hidden;
+	display: flex;
+	padding: 2px;
+	position: relative;
+	border-radius: var(--node-border-radius);
+	flex-grow: 1;
+	height:100%;
+}
+
+
+/* gradients on */
+.gradient-dark-on:before {
+	content: '';
+	position: absolute;
+	padding-bottom: calc(100% * 1.41421356237);
+	width: calc(100% * 1.41421356237);
+	background: conic-gradient(
+		from -160deg at 50% 50%,
+		#e92a67 0deg,
+		#a853ba 120deg,
+		#2a8af6 240deg,
+		#e92a67 360deg
+	);
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	border-radius: 100%;
+}
+.react-flow__node-graphNode.selected .wrapper.gradient-dark-on:before {
+	content: '';
+	background: conic-gradient(
+		from -160deg at 50% 50%,
+		#e92a67 0deg,
+		#a853ba 120deg,
+		#2a8af6 240deg,
+		rgba(42, 138, 246, 0) 360deg
+	);
+	animation: spinner 4s linear infinite;
+	transform: translate(-50%, -50%) rotate(0deg);
+	z-index: -1;
+}
+@keyframes spinner {
+	100% {
+		transform: translate(-50%, -50%) rotate(-360deg);
+	}
+}
+
+.gradient-neo-on:before {
+	content: '';
+	position: absolute;
+	padding-bottom: calc(100% * 1.41421356237);
+	width: calc(100% * 1.41421356237);
+	background: conic-gradient(
+		from -160deg at 50% 50%,
+		#00ff37 0deg,
+		#020a00 120deg,
+		#000307 240deg,
+		#000000 360deg
+	);
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	border-radius: 100%;
+}
+.react-flow__node-graphNode.selected .wrapper.gradient-neo-on:before {
+	content: '';
+	background: conic-gradient(
+		from -160deg at 50% 50%,
+		#1eff00 0deg,
+		#000000 120deg,
+		#15ff00 240deg,
+		rgba(42, 138, 246, 0) 360deg
+	);
+	animation: spinner 4s linear infinite;
+	transform: translate(-50%, -50%) rotate(0deg);
+	z-index: -1;
+}
+@keyframes spinner {
+	100% {
+		transform: translate(-50%, -50%) rotate(-360deg);
+	}
+}
+
+.gradient-light-on:before {
+	content: '';
+	position: absolute;
+	padding-bottom: calc(100% * 1.41421356237);
+	width: calc(100% * 1.41421356237);
+	background: conic-gradient(
+		from -160deg at 50% 50%,
+		#e92a67 0deg,
+		#fff 120deg,
+		#fff 240deg,
+		#e92a67 360deg
+	);
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	border-radius: 100%;
+}
+.react-flow__node-graphNode.selected .wrapper.gradient-light-on:before {
+	content: '';
+	background: conic-gradient(
+		from -160deg at 50% 50%,
+		#e92a67 0deg,
+		#ffffff 120deg,
+		#fff 240deg,
+		rgba(42, 138, 246, 0) 360deg
+	);
+	animation: spinner 4s linear infinite;
+	transform: translate(-50%, -50%) rotate(0deg);
+	z-index: -1;
+}
+@keyframes spinner {
+	100% {
+		transform: translate(-50%, -50%) rotate(-360deg);
+	}
+}
+
+/* gradients on */
+.gradient-dark-off:before {
+	content: '';
+	position: absolute;
+	padding-bottom: calc(100% * 1.41421356237);
+	width: calc(100% * 1.41421356237);
+	background: conic-gradient(
+		from -160deg at 50% 50%,
+		#e92a67 0deg,
+		#a853ba 120deg,
+		#2a8af6 240deg,
+		#e92a67 360deg
+	);
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	border-radius: 100%;
+}
+.react-flow__node-graphNode.selected .wrapper.gradient-dark-off:before {
+	content: '';
+	background: white;
+	z-index: -1;
+}
+@keyframes spinner {
+	100% {
+		transform: translate(-50%, -50%) rotate(-360deg);
+	}
+}
+
+.gradient-neo-off:before {
+	content: '';
+	position: absolute;
+	padding-bottom: calc(100% * 1.41421356237);
+	width: calc(100% * 1.41421356237);
+	/* background: conic-gradient(
+		from -160deg at 50% 50%,
+		#00ff37 0deg,
+		#020a00 120deg,
+		#000307 240deg,
+		#000000 360deg
+	); */
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	border-radius: 100%;
+}
+.react-flow__node-graphNode.selected .wrapper.gradient-neo-off:before {
+	content: '';
+	background: #1eff00;
+	z-index: -1;
+}
+@keyframes spinner {
+	100% {
+		transform: translate(-50%, -50%) rotate(-360deg);
+	}
+}
+
+.gradient-light-off:before {
+	content: '';
+	position: absolute;
+	padding-bottom: calc(100% * 1.41421356237);
+	width: calc(100% * 1.41421356237);
+	background: conic-gradient(
+		from -160deg at 50% 50%,
+		#ffffff 0deg,
+		#fff 120deg,
+		#fff 240deg,
+		#ffffff 360deg
+	);
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	border-radius: 100%;
+}
+.react-flow__node-graphNode.selected .wrapper.gradient-light-off:before {
+	content: '';
+	background: conic-gradient(
+		from -160deg at 50% 50%,
+		#e92a67 0deg,
+		#ffffff 120deg,
+		#fff 240deg,
+		rgba(42, 138, 246, 0) 360deg
+	);
+	animation: spinner 4s linear infinite;
+	transform: translate(-50%, -50%) rotate(0deg);
+	z-index: -1;
+}
+@keyframes spinner {
+	100% {
+		transform: translate(-50%, -50%) rotate(-360deg);
+	}
+}
+
+
+/* inner switches for themes */
+.react-flow__node-graphNode .inner {
+	padding: 3px 10px;
+	border-radius: var(--node-border-radius);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	flex-grow: 1;
+	position: relative;
+	overflow-wrap: anywhere;
+}
+.react-flow__node-graphNode .light{
+	background: rgb(241, 227, 227);
+	color:black;
+}
+.react-flow__node-graphNode .dark{
+	background: rgb(17, 17, 17);
+	color: #F4C361;
+}
+.react-flow__node-graphNode .neo{
+	background: rgb(17, 17, 17);
+	color: #00c431;
+}
+
+.react-flow__node-graphNode .inner:after {
+	content: "";
+	position:absolute;
+	right:4px;
+	bottom: 4px;
+	width:4px;
+	height:4px;
+	transform:rotate(-45deg);
+	background:white;
+	border-radius:50%;
+	opacity:70%;
+}
+.react-flow__node-graphNode .inner:after:hover {
+	opacity:100%;
+}
+.react-flow__node-graphNode .body {
+	display: flex;
+	height: 90%;
+	width: 100%;
+	overflow-wrap: anywhere;
+}
+.react-flow__node:focus {
+	outline: none;
 }

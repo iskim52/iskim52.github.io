@@ -1,7 +1,5 @@
 import { Component } from "react";
 import useStore from "../store.tsx";
-import '../css/workflow.css'
-
 
 export default class WorkflowComponent extends Component {
   constructor(props) {

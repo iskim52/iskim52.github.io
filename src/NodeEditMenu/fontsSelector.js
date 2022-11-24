@@ -5,8 +5,6 @@ import HTMLString from 'react-html-string';
 
 import useStore from '../store.tsx';
 
-import '../css/nodeedit.css'
-
 const fontOptions = [
   {value: "Helvetica", label: "Helvetica"},
   {value: "Arial", label: "Arial"},
