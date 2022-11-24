@@ -4,39 +4,101 @@
 
 
 /* internal node css */
-.contentEditable {
-    background: rgba(29, 34, 37, 0);
-    width: 100%;
-    height:100%;
-    font-size: 1.5em;
-    position:relative;
-    flex-direction:row;
-    outline:none;
-    resize:none;
-    border:none;
-    overflow-y: auto; /* need to fix: show only when text is past limit*/
-    overflow-wrap:anywhere;
-  }
-.contentEditable::-webkit-scrollbar-track{
-    background-color: black;
-    border-radius:10px;
-    cursor:grab;
+.contentEditable-dark {
+	background: rgba(29, 34, 37, 0);
+	width: 100%;
+	height:100%;
+	font-size: 1.5em;
+	position:relative;
+	flex-direction:row;
+	outline:none;
+	resize:none;
+	border:none;
+	overflow-y: auto; /* need to fix: show only when text is past limit*/
+	overflow-wrap:anywhere;
 }
-.contentEditable::-webkit-scrollbar{
-    width: 10px;
-    border-radius:10px;
-    background-color: #111111;
-    cursor:grab;
+.contentEditable-dark::-webkit-scrollbar-track{
+	background-color: black;
+	border-radius:10px;
+	cursor:grab;
 }
-.contentEditable::-webkit-scrollbar-thumb{
-    border-radius: 10px;
-    width:2px;
-    /* box-shadow: 1px 0px 4px 4px grey; */
-    background-color: rgba(68, 68, 68, 0.75);
-    cursor:grab;
+.contentEditable-dark::-webkit-scrollbar{
+	width: 10px;
+	border-radius:10px;
+	background-color: #111111;
+	cursor:grab;
+}
+.contentEditable-dark::-webkit-scrollbar-thumb{
+	border-radius: 10px;
+	width:2px;
+	/* box-shadow: 1px 0px 4px 4px grey; */
+	background-color: rgba(68, 68, 68, 0.75);
+	cursor:grab;
 }
 
+.contentEditable-neo {
+	background: rgba(29, 34, 37, 0);
+	width: 100%;
+	height:100%;
+	font-size: 1.5em;
+	position:relative;
+	flex-direction:row;
+	outline:none;
+	resize:none;
+	border:none;
+	overflow-y: auto; /* need to fix: show only when text is past limit*/
+	overflow-wrap:anywhere;
+}
+.contentEditable-neo::-webkit-scrollbar-track{
+	background-color: black;
+	border-radius:10px;
+	cursor:grab;
+}
+.contentEditable-neo::-webkit-scrollbar{
+	width: 10px;
+	border-radius:10px;
+	background-color: #111111;
+	cursor:grab;
+}
+.contentEditable-neo::-webkit-scrollbar-thumb{
+	border-radius: 10px;
+	width:2px;
+	/* box-shadow: 1px 0px 4px 4px grey; */
+	background-color: rgba(68, 68, 68, 0.75);
+	cursor:grab;
+}
 
+.contentEditable-light {
+	background: rgba(29, 34, 37, 0);
+	width: 100%;
+	height:100%;
+	font-size: 1.5em;
+	position:relative;
+	flex-direction:row;
+	outline:none;
+	resize:none;
+	border:none;
+	overflow-y: auto; /* need to fix: show only when text is past limit*/
+	overflow-wrap:anywhere;
+}
+.contentEditable-light::-webkit-scrollbar-track{
+	background-color: rgb(187, 187, 187);
+	border-radius:10px;
+	cursor:grab;
+}
+.contentEditable-light::-webkit-scrollbar{
+	width: 10px;
+	border-radius:10px;
+	background-color: #cacaca;
+	cursor:grab;
+}
+.contentEditable-light::-webkit-scrollbar-thumb{
+	border-radius: 10px;
+	width:2px;
+	/* box-shadow: 1px 0px 4px 4px grey; */
+	background-color: rgba(255, 255, 255, 1);
+	cursor:grab;
+}
 
 
 /* external node css */

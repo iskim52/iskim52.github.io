@@ -6,6 +6,7 @@ import React, {
 import ReactFlow, {
   Controls,
   useReactFlow,
+  Background,
 } from 'reactflow';
 
 import BaseGraphNode from './BaseGraphNode/BaseGraphNode';
@@ -37,6 +38,7 @@ const Flow = () => {
     setDoubleClickedNode,
     clickednode,
     headerTheme,
+    backgroundOn,
   } = useStore();
 
   //set states
@@ -194,10 +196,9 @@ const Flow = () => {
         onNodeDoubleClick={(e, node) => setDoubleClickedNode(node.id)}
         onPaneClick={() => setDoubleClickedNode(null)}
 
-        // fitViewOptions={defaultFitView}
-        // fitView
         minZoom = {.2}
       >
+        {backgroundOn ? <Background /> : <div></div>}
         <Controls />
         <svg>
           <defs>

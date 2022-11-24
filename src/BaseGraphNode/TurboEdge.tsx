@@ -1,5 +1,7 @@
 import React from 'react';
 import { EdgeProps, getBezierPath } from 'reactflow';
+import useStore from '../store.tsx';
+
 
 export default function CustomEdge({
   id,
@@ -14,6 +16,8 @@ export default function CustomEdge({
 }: EdgeProps) {
   const xEqual = sourceX === targetX;
   const yEqual = sourceY === targetY;
+
+  const {headerTheme} = useStore();
 
   const [edgePath] = getBezierPath({
     // we need this little hack in order to display the gradient for a straight line
@@ -30,7 +34,7 @@ export default function CustomEdge({
       <path
         id={id}
         style={style}
-        className="react-flow__edge-path"
+        className={"react-flow__edge-path-" + headerTheme}
         d={edgePath}
         markerEnd={markerEnd}
       />

@@ -37,12 +37,32 @@
   background-color: rgb(10, 10, 10);
 }
 
-/* doesn't belong anywhere else */
+/* edge paths */
 .react-flow__edge .react-flow__edge-path {
   stroke: url(#edge-gradient);
   stroke-width: 2;
   stroke-opacity: 0.75;
 }
+.react-flow__edge .react-flow__edge-path-dark {
+  stroke: url(#edge-gradient);
+  stroke-width: 2;
+  stroke-opacity: 0.75;
+  fill: none;
+}
+.react-flow__edge .react-flow__edge-path-neo {
+  stroke: #00ff0d;
+  stroke-width: 2;
+  stroke-opacity: 0.75;
+  fill: none;
+}
+.react-flow__edge .react-flow__edge-path-light {
+  stroke: #97008b;
+  stroke-width: 2;
+  stroke-opacity: 0.75;
+  fill: none;
+}
+
+
 .react-flow__attribution {
   background: rgba(200, 200, 200, 0.2);
 }

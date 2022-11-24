@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import ReactDOMServer from 'react-dom/server'
 import Select from 'react-select';
 import HTMLString from 'react-html-string';
@@ -16,8 +16,6 @@ const fontSizeObj = fontSize.map(fontSize => {
 
 
 export default function FontSize() { 
-
-  const [selectedOption, ] = useState(null);
   const {getNode, clickednode, setNodeHtml} = useStore();
 
   function selectOption(evt) {

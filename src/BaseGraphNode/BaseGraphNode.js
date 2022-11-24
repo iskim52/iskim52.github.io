@@ -26,11 +26,10 @@ function BaseNode(data, isConnectable){
   const handleChange = evt => {
 		//fucking took me 9 years to figure out that 
 		//i need to send the entire node instead of just id
-		console.log(evt.target.value)
 		setNodeHtml(data, evt.target.value); 
   };
   const sanitizeConf = {
-    allowedTags: ["div", "b", "i", "em", "strong", "a", "p", "h1"],
+    allowedTags: ["div", "b", "br", "i", "em", "strong", "a", "p", "h1"],
     allowedAttributes: { a: ["href"] }
   };
 	const sanitize = () => {
@@ -61,9 +60,7 @@ function BaseNode(data, isConnectable){
 					bottomRight: "nodrag",
 					bottomLeft: "nodrag",
 					topLeft: "nodrag"
-				}
-
-				}
+				}}
 			>
 				<div className={"node-box-shadow-" + headerTheme + " wrapper gradient-"+ headerTheme +'-'+gradientOn}>
 					<div className={"inner " + headerTheme}>
@@ -82,7 +79,8 @@ function BaseNode(data, isConnectable){
 								isConnectable={isConnectable}
 							/>
 							<ContentEditable 
-								className="contentEditable"
+								className={"contentEditable-"+headerTheme}
+								// className={"contentEditable"}
 								html={getNodeHtml(data.id)}
 								onChange={handleChange}
 								onBlur={sanitize}
