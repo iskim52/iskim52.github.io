@@ -12,8 +12,6 @@ import BaseGraphNode from './BaseGraphNode/BaseGraphNode';
 import useStore from './store.tsx';
 import TurboEdge from './BaseGraphNode/TurboEdge.tsx';
 
-
-
 const nodeTypes = {
     graphNode: BaseGraphNode,
   };
@@ -25,17 +23,8 @@ const defaultEdgeOptions = {
   markerEnd: 'edge-circle',
 };
 
-const defaultFitView = {
-  zoom: 1,
-}
 
-
-const DnDFlow = (
-  {
-  setClickedNode,
-  }
-  ) => {
-
+const Flow = () => {
   const graphStore = useStore.getState();
   const { 
     nodes,
@@ -47,6 +36,7 @@ const DnDFlow = (
     addEdge,
     setDoubleClickedNode,
     clickednode,
+    headerTheme,
   } = useStore();
 
   //set states
@@ -177,66 +167,60 @@ const DnDFlow = (
   );
 
   return (
-    <>
-      <div className="dndflow">
-        <div className="reactflow-wrapper" ref={reactFlowWrapper}>
-          <ReactFlow
-            onInit={setReactFlowInstance}
+    <div className="reactflow-wrapper" ref={reactFlowWrapper}>
+      <ReactFlow
+        className={"rfbg-"+headerTheme}
+        onInit={setReactFlowInstance}
 
-            nodes={nodes}
-            edges={edges}
-            nodeTypes={nodeTypes}
-						edgeTypes={edgeTypes}
-            onNodesChange={onNodesChange}
-            onEdgesChange={onEdgesChange}
-            defaultEdgeOptions={defaultEdgeOptions}
+        nodes={nodes}
+        edges={edges}
+        nodeTypes={nodeTypes}
+        edgeTypes={edgeTypes}
+        onNodesChange={onNodesChange}
+        onEdgesChange={onEdgesChange}
+        defaultEdgeOptions={defaultEdgeOptions}
 
-            deleteKeyCode = {['Delete', 'Backspace']}
+        deleteKeyCode = {['Delete', 'Backspace']}
 
-            onConnect={onConnect}
-            onConnectStart={onConnectStart}
-            onConnectEnd={onConnectEnd}
-            
-            onDrop={onDrop}
-            onDragOver={onDragOver}
-            onMoveEnd={onMoveEnd}
+        onConnect={onConnect}
+        onConnectStart={onConnectStart}
+        onConnectEnd={onConnectEnd}
+        
+        onDrop={onDrop}
+        onDragOver={onDragOver}
+        onMoveEnd={onMoveEnd}
 
-            onNodeClick={(e, node) => (clickednode === node.id ? null : setDoubleClickedNode(null))}
-            onNodeDoubleClick={(e, node) => setDoubleClickedNode(node.id)}
-            onPaneClick={() => setDoubleClickedNode(null)}
+        onNodeClick={(e, node) => (clickednode === node.id ? null : setDoubleClickedNode(null))}
+        onNodeDoubleClick={(e, node) => setDoubleClickedNode(node.id)}
+        onPaneClick={() => setDoubleClickedNode(null)}
 
-            // fitViewOptions={defaultFitView}
-            // fitView
-            minZoom = {.2}
-          >
-          {/* hi */}
-        	<Controls />
-
-					<svg>
-						<defs>
-							<linearGradient id="edge-gradient">
-								<stop offset="0%" stopColor="#ae53ba" />
-								<stop offset="100%" stopColor="#2a8af6" />
-							</linearGradient>
-							<marker
-								id="edge-circle"
-								viewBox="-5 -5 10 10"
-								refX="0"
-								refY="0"
-								markerUnits="strokeWidth"
-								markerWidth="10"
-								markerHeight="10"
-								orient="auto"
-							>
-							</marker>
-						</defs>
-					</svg>
-          </ReactFlow>
-        </div>    
-      </div>
-    </>
-
+        // fitViewOptions={defaultFitView}
+        // fitView
+        minZoom = {.2}
+      >
+        <Controls />
+        <svg>
+          <defs>
+            <linearGradient id="edge-gradient">
+              <stop offset="0%" stopColor="#ae53ba" />
+              <stop offset="100%" stopColor="#2a8af6" />
+            </linearGradient>
+            <marker
+              id="edge-circle"
+              viewBox="-5 -5 10 10"
+              refX="0"
+              refY="0"
+              markerUnits="strokeWidth"
+              markerWidth="10"
+              markerHeight="10"
+              orient="auto"
+            >
+            </marker>
+          </defs>
+        </svg>
+      </ReactFlow>
+    </div>
   );
 };
 
-export default DnDFlow;
+export default Flow;

@@ -7,11 +7,12 @@ import './css/index.css';
 import './css/basenode.css';
 import './css/nodeedit.css';
 import './css/workflow.css';
+import './css/rfcontrols.css';
+import './css/contextmenu.css';
 import '@szhsin/react-menu/dist/index.css';
 import "@szhsin/react-menu/dist/theme-dark.css";
 
 import App from "./App";
-
 
 const root = createRoot(document.getElementById("root"));
 root.render(

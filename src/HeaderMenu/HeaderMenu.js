@@ -1,4 +1,4 @@
-import React, { useTransition } from 'react';
+import React from 'react';
 import {
   Menu,
   MenuItem,
@@ -15,13 +15,12 @@ import useStore from '../store.tsx';
 
 export default function HeaderMenu(props) {
   let setDisplayView = props.setDisplayView
-  // const backgroundTheme = useStore.getState().backgroundTheme;
-  const {headerTheme, setHeaderTheme} = useStore();
+  const {headerTheme, setHeaderTheme, setGradientOn} = useStore();
 
   return (
     <div className="menuContainer">
       <Menu 
-        menuButton={<MenuButton>📁 File</MenuButton>}
+        menuButton={<MenuButton className={"menu-btn-" + headerTheme}>📁 File</MenuButton>}
         theming={true ? "dark" : undefined}>
           <MenuItem onClick={() => NewFile()}>
             New File
@@ -36,7 +35,7 @@ export default function HeaderMenu(props) {
           <MenuItem>Convert from Draw.io</MenuItem>
       </Menu>
       <Menu 
-        menuButton={<MenuButton>🖥️ Display</MenuButton>}
+        menuButton={<MenuButton className={"menu-btn-" + headerTheme}>🖥️ Display</MenuButton>}
         theming={true ? "dark" : undefined}>
           <MenuItem onClick={() => setDisplayView('Graph')}>
             Graph View
@@ -49,30 +48,30 @@ export default function HeaderMenu(props) {
           {/* <MenuItem>Node Edit View</MenuItem> */}
       </Menu>
       <Menu 
-        menuButton={<MenuButton>🎨 Themes</MenuButton>}
+        menuButton={<MenuButton className={"menu-btn-" + headerTheme}>🎨 Themes</MenuButton>}
         theming={"dark"}>
           <SubMenu label="Background Themes">
-            <MenuItem value='./css/light.css' onClick={(evt) => setHeaderTheme(evt.value)}>
+            <MenuItem value='light' onClick={(evt) => setHeaderTheme(evt.value)}>
               Light
             </MenuItem>
-            <MenuItem value='../css/headermenu/headermenu-dark.scss' onClick={() => setDisplayView('Graph')}>
+            <MenuItem value='dark' onClick={(evt) => setHeaderTheme(evt.value)}>
               Dark
             </MenuItem>
-            <MenuItem value='./css/neo.css' onClick={() => setDisplayView('Graph')}>
+            <MenuItem value='neo' onClick={(evt) => setHeaderTheme(evt.value)}>
               Neo
             </MenuItem>
           </SubMenu>
           <SubMenu label="Node Themes">
-            <MenuItem value='./css/animated.css' onClick={() => setDisplayView('Graph')}>
+            <MenuItem value='animated' onClick={() => setGradientOn('on')}>
               Animated
             </MenuItem>
-            <MenuItem value='./css/static.css' onClick={() => setDisplayView('Graph')}>
+            <MenuItem value='static' onClick={() => setGradientOn('off')}>
               Static
             </MenuItem>
           </SubMenu>
       </Menu>
       <Menu 
-        menuButton={<MenuButton><font color='red'>⁉️</font> Help</MenuButton>}
+        menuButton={<MenuButton className={"menu-btn-" + headerTheme}><font color='red'>⁉️</font> Help</MenuButton>}
         theming={true ? "dark" : undefined}>
           <MenuItem>Tutorial</MenuItem>
           <MenuItem>Contact Us</MenuItem>

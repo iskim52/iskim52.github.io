@@ -1,4 +1,17 @@
-/* // CSS classes */
+
+//header class
+.headerClass {
+  width:100%;
+}
+.headerClass_dark {
+  background-color: black;
+}
+.headerClass_light {
+  background-color: rgb(223, 223, 223);
+}
+.headerClass_neo {
+  background-color: black;
+}
 
 .menuContainer {
   display:flex;
@@ -28,7 +41,6 @@
     padding: 0.375rem 0.625rem;
     &--hover {
       color: #fff;
-      background-color: #460026;
     }
     &--submenu {
       position: relative;
@@ -44,33 +56,44 @@
     margin: 0.5rem 0.625rem;
   }
 }
+
+//menu btn
 .szh-menu-button{
-  background-color: black;
-  color: #cad1d8;
   height:5vh;
-  border-radius:5px;
+  border-width:0px;
   padding-left:10px;
   padding-right:25px;
   font-size: 1.2em;
   font-family: Display, sans-serif;
 }
-
-.szh-menu-button:hover{
+.menu-btn-dark{
+  background-color: black;
+  color: #cad1d8;
+}
+.menu-btn-light{
+  background-color: rgb(223, 223, 223);
+  color: #242424;
+}
+.menu-btn-neo{
+  background-color: black;
+  color: #00c431;
+}
+.menu-btn-dark:hover{
   background-color:rgb(17, 17, 17);
 }
-
+.menu-btn-light:hover{
+  background-color: rgb(204, 204, 204);
+}
+.menu-btn-neo:hover{
+  background-color: rgb(17, 17, 17);
+}
 @keyframes szh-menu-show {
   from {
     opacity: 0;
   }
 }
-
 @keyframes szh-menu-hide {
   to {
     opacity: 0;
   }
-}
-
-.menuDivider {
-  color:white;
 }
