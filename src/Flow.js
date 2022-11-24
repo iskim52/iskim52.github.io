@@ -6,6 +6,7 @@ import React, {
 import ReactFlow, {
   Controls,
   useReactFlow,
+  Background,
 } from 'reactflow';
 
 import BaseGraphNode from './BaseGraphNode/BaseGraphNode';
@@ -198,6 +199,7 @@ const Flow = () => {
         // fitView
         minZoom = {.2}
       >
+        <Background />
         <Controls />
         <svg>
           <defs>
