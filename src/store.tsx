@@ -129,6 +129,17 @@ const useStore = create<RFState>((set,get) => ({
   getNodeHtml: (nodeid: string) => {
     return get().nodes.find(node => node.id === nodeid)?.data.htmlData
   },
+  setNodeSize: (node: { id: any; }, size: object) => {
+    console.log(size)
+    const index = get().nodes.findIndex(nodes => nodes.id === node.id);
+    if (index !== -1)
+      set(produce((state) => {
+        state.nodes[index].data.size = size
+      }), true)
+  },
+  getNodeSize: (nodeid: string) => {
+    return get().nodes.find(node => node.id === nodeid)?.data.size
+  },
 
   deleteEverything: () => {
     set({
