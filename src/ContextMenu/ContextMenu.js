@@ -83,9 +83,19 @@ class ContextMenu extends Component {
 
 	addNewNode = (e) => {
 		// useStore((state) => state.increaseId)
-		useStore.getState().increaseId()
+		const graphStore = useStore.getState();
+		let nodeUsed = true;
+		let id;
+		while (nodeUsed) {
+			graphStore.increaseId()
+			id = `${graphStore.getCurrentId()}`;
+			if (graphStore.getNode(id) === undefined) {
+				nodeUsed = false;
+			}
+		}
+
 		const newNode = {
-			id:String(useStore.getState().getCurrentId()),
+			id: id,
 			type:'graphNode',
 			// have to set zoomscale and t/l bounds in store
 			// we are removing the half of the node width (75) to center the new node

@@ -11,7 +11,6 @@ function EditButton(props) {
       className={props.className}
       key={props.cmd}
       onMouseDown={evt => {
-        console.log(document.getSelection())
         evt.preventDefault(); // Avoids loosing focus from the editable area
 
         // Apparently this is deprecrecated but they haven't pushed any other 

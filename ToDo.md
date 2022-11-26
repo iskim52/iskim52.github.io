@@ -23,7 +23,8 @@
       - [X] Update node store to include HTML label and regular label
 20.  [ ] Add edit node features
       - [X] Font Style
-      - [ ] Font Size
+      - [X] Font Size
+            - [ ] Dropdown doesn't highlight text. When I click size drodown, it removes focus highlight.
       - [X] Bold
       - [X] Italic
       - [ ] Underline

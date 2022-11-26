@@ -1,4 +1,5 @@
 import { Component } from "react";
+import HTMLString from 'react-html-string';
 import useStore from "../store.tsx";
 
 export default class WorkflowComponent extends Component {
@@ -40,7 +41,7 @@ export default class WorkflowComponent extends Component {
         edgeSet.has(node.id)  
       )
     let edgeNodeHTML = edgeNodeList.map((node) =>
-        <div onClick={() => this.handleClick(node.id)} className="edgeNode" key={node.id}> {node.data.label} </div>
+        <div onClick={() => this.handleClick(node.id)} className="edgeNode" key={node.id}> <HTMLString html={node.data.htmlData} /> </div>
     );
 
     return(
@@ -49,7 +50,7 @@ export default class WorkflowComponent extends Component {
           className="currentNode"
           nodeid={currentNodeData.id}
         >
-          {currentNodeData.data.label}
+          <HTMLString html={currentNodeData.data.htmlData} />
         </div>
         {edgeNodeHTML}
       </div>

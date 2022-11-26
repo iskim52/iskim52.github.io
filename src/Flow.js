@@ -39,6 +39,7 @@ const Flow = () => {
     clickednode,
     headerTheme,
     backgroundOn,
+    getNode,
   } = useStore();
 
   //set states
@@ -65,14 +66,28 @@ const Flow = () => {
       if (targetIsPane) {
         // we need to remove the wrapper bounds, in order to get the correct position
         const { top, left } = reactFlowWrapper.current.getBoundingClientRect();
-        graphStore.increaseId()
-        const id = `${graphStore.getCurrentId()}`;
+
+        //Increases node id number; if node id used go to the next one.
+        let nodeUsed = true;
+        let id;
+        while (nodeUsed) {
+          graphStore.increaseId()
+          id = `${graphStore.getCurrentId()}`;
+          if (getNode(id) === undefined) {
+            nodeUsed = false;
+          }
+        }
+        // console.log(getNode(500) === undefined)
+
+
         const newNode = {
           id,
           type:'graphNode',
           // we are removing the half of the node width (75) to center the new node
           position: project({x: event.clientX - (150*zoomScale.current) - left, y: event.clientY - top}),
-          data: { label: `Node ${id}`, htmlData: `Node ${id}`, size: {height: 150, width:300},},
+          // data: { label: `Node ${id}`, htmlData: `Node ${id}`, size: {height: 150, width:300},},
+          data: { label: ``, htmlData: ``, size: {height: 150, width:300},},
+
         };
         // i have to somehow find a way to get the source node positioning in order to figure out which handlers to use
         let prevNode = nodes.find(node => node.id === connectingNodeId.current);
