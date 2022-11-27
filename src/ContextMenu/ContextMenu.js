@@ -100,7 +100,7 @@ class ContextMenu extends Component {
 			// have to set zoomscale and t/l bounds in store
 			// we are removing the half of the node width (75) to center the new node
 			position: {x: e.pageX, y: e.pageY},
-			data: { label: `Node ${String(useStore.getState().getCurrentId())}`, htmlData: `Node ${String(useStore.getState().getCurrentId())}`, size: {height: 150, width:300},},
+			data: { label: `Node ${String(useStore.getState().getCurrentId())}`, htmlData: `Node ${String(useStore.getState().getCurrentId())}`, size: {height: 150, width:300}, bgcolor: ``},
 		};
 		useStore.getState().addNode(newNode)
 	};

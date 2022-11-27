@@ -27,7 +27,7 @@
             - [ ] Dropdown doesn't highlight text. When I click size drodown, it removes focus highlight.
       - [X] Bold
       - [X] Italic
-      - [ ] Underline
+      - [X] Underline
       - [ ] Text Color
       - [ ] Insert Image
       - [ ] Hyperlink

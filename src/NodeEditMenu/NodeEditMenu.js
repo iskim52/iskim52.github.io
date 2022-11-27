@@ -3,7 +3,7 @@ import HTMLString from 'react-html-string';
 import useStore from "../store.tsx";
 import FontSelector from "./fontsSelector"
 import FontSize from './fontSize';
-
+import NodeBackground from './nodeBackground';
 
 function EditButton(props) {
   return (
@@ -15,7 +15,7 @@ function EditButton(props) {
 
         // Apparently this is deprecrecated but they haven't pushed any other 
         // replacements and the world will end up in WW3 is they get rid of it.
-        document.execCommand(props.cmd, false, props.arg); 
+        document.execCommand(props.cmd, false, props.arg);
         // needs to update store with new html     
       }}
     >
@@ -28,7 +28,7 @@ export default function NodeEditMenu() {
   const { clickednode } = useStore()
 
   if (clickednode !== null) {
-    return(
+    return (
       <div id="nodeEditMenu">
         <div className="nemContainer">
           <div className="nemNodeid">Node ID: {clickednode}</div>
@@ -45,11 +45,11 @@ export default function NodeEditMenu() {
           <FontSelector />
           <FontSize />
           <EditButton className="nemitem" cmd="bold" name="<b>B</b>" />
-          <EditButton className="nemitem" cmd="italic" name="<i> I </i>"/> 
+          <EditButton className="nemitem" cmd="italic" name="<i> I </i>" />
           <EditButton className="nemitem" cmd="underline" name="<u> U </u>" />
           {/* Find Color Pickers */}
-          <EditButton className="nemitem" cmd="textcolor" name="Text Color" /> 
-          <EditButton className="nemitem" cmd="backgroundcolor" name="Background Color" />
+          <EditButton className="nemitem" cmd="textcolor" name="Text Color" />
+          <NodeBackground />          
           <EditButton
             className="nemitem"
             cmd="createLink"

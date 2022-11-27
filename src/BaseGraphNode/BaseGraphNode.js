@@ -7,7 +7,7 @@ import sanitizeHtml from "sanitize-html";
 import useStore from '../store.tsx';
 
 function BaseNode(data, isConnectable){
-	const { setNodeHtml , getNodeHtml, setNodeSize, getNodeSize, headerTheme, gradientOn} = useStore();
+	const { setNodeHtml , getNodeHtml, setNodeSize, getNodeSize, getNodeBG, headerTheme, gradientOn} = useStore();
 	// had to put a stupid hack in so that the input box would scale with resize
 	try{
 		let inputBoxHack = document.querySelector("#root > div > div > div > div.react-flow__renderer > div.react-flow__viewport.react-flow__container > div.react-flow__nodes > div.react-flow__node.react-flow__node-graphNode.nopan.selected.selectable > div > div.wrapper.gradient > div > div > div.styles-module_Editext__main_container__2azCD > div")
@@ -60,7 +60,8 @@ function BaseNode(data, isConnectable){
 				}}
 			>
 				<div className={"node-box-shadow-" + headerTheme + " wrapper gradient-"+ headerTheme +'-'+gradientOn}>
-					<div className={"inner " + headerTheme}>
+					<div className={"inner " + headerTheme} style={{background:getNodeBG(data.id)}}>
+						{/* if it has a color set a color */}
 						<div className="body">
 							<Handle
 								type="target"

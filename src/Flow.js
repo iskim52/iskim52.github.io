@@ -86,7 +86,7 @@ const Flow = () => {
           // we are removing the half of the node width (75) to center the new node
           position: project({x: event.clientX - (150*zoomScale.current) - left, y: event.clientY - top}),
           // data: { label: `Node ${id}`, htmlData: `Node ${id}`, size: {height: 150, width:300},},
-          data: { label: ``, htmlData: ``, size: {height: 150, width:300},},
+          data: { label: ``, htmlData: ``, size: {height: 150, width:300}, bgcolor: ``},
 
         };
         // i have to somehow find a way to get the source node positioning in order to figure out which handlers to use
@@ -173,7 +173,7 @@ const Flow = () => {
       const newNode = {
         id: graphStore.getCurrentId(),
         position,
-        data: { label: `${type} node` , htmlData: `${type} node` , size: {height: 150, width:300},},
+        data: { label: `${type} node` , htmlData: `${type} node` , size: {height: 150, width:300}, bgcolor: ``},
         type: 'graphNode',
       };
 

@@ -130,7 +130,6 @@ const useStore = create<RFState>((set,get) => ({
     return get().nodes.find(node => node.id === nodeid)?.data.htmlData
   },
   setNodeSize: (node: { id: any; }, size: object) => {
-    console.log(size)
     const index = get().nodes.findIndex(nodes => nodes.id === node.id);
     if (index !== -1)
       set(produce((state) => {
@@ -139,6 +138,20 @@ const useStore = create<RFState>((set,get) => ({
   },
   getNodeSize: (nodeid: string) => {
     return get().nodes.find(node => node.id === nodeid)?.data.size
+  },
+  setNodeBG : (nodeid: string, color: string) => {
+    const index = get().nodes.findIndex(nodes => nodes.id === nodeid);
+    if (index !== -1)
+      set(produce((state) => {
+        state.nodes[index].data.bgcolor = color
+      }))
+      console.log(get())
+      console.log(index)
+      console.log()
+    
+  },
+  getNodeBG: (nodeid: string) => {
+    return get().nodes.find(node => node.id === nodeid)?.data.bgcolor
   },
 
   deleteEverything: () => {
