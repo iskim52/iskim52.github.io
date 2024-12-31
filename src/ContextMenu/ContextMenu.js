@@ -41,8 +41,11 @@ class ContextMenu extends Component {
 
 	handleContextMenu = (e) => {
 		e.preventDefault();
+		// chrome 55 update
+		const path = e.composedPath();
+		
 		// location handling
-		for (let i = 0; i < e.path.length; i++) {
+		for (let i = 0; i < path.length; i++) {
 			//checks to see if on reactflow
 			
 			//checks to see if on node
