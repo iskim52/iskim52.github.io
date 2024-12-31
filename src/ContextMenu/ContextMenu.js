@@ -41,23 +41,25 @@ class ContextMenu extends Component {
 
 	handleContextMenu = (e) => {
 		e.preventDefault();
+		const path = e.composedPath();
+
 		// location handling
-		for (let i = 0; i < e.path.length; i++) {
+		for (let i = 0; i < path.length; i++) {
 			//checks to see if on reactflow
 			
 			//checks to see if on node
-			if (e.path[i].tagName === 'DIV') {
-				if (e.path[i].hasAttribute('data-id')) {
+			if (path[i].tagName === 'DIV') {
+				if (path[i].hasAttribute('data-id')) {
 					this.setState({
 						xPos: `${e.pageX}px`,
 						yPos: `${e.pageY}px`,
 						showMenu: true,
 						isNode: true,
-						node: e.path[i].getAttribute('data-id'),
+						node: path[i].getAttribute('data-id'),
 					});
 					break;
 				} 
-				else if (e.path[i].classList.contains('react-flow')) {
+				else if (path[i].classList.contains('react-flow')) {
 					this.setState({
 						xPos: `${e.pageX}px`,
 						yPos: `${e.pageY}px`,
@@ -66,14 +68,14 @@ class ContextMenu extends Component {
 				}
 			}
 			//checks to see if on edge
-			else if (e.path[i].tagName === 'path') {
-				if (e.path[i].hasAttribute('id')) {
+			else if (path[i].tagName === 'path') {
+				if (path[i].hasAttribute('id')) {
 					this.setState({
 						xPos: `${e.pageX}px`,
 						yPos: `${e.pageY}px`,
 						showMenu: true,
 						isEdge: true,
-						edge: e.path[i].id,
+						edge: path[i].id,
 					});
 					break;
 				}
