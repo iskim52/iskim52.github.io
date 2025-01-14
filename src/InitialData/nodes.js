@@ -1,2 +1,338 @@
-const initialNodes = [{"id":"1","type":"graphNode","position":{"x":251.91820837390452,"y":-279.3378773125608},"data":{"label":"Hi!&nbsp;Welcome to GraphFlow! GraphFlow is a tool to create a graph and view it via a step-by-step workflow mode.","htmlData":"Hi! Welcome to GraphFlow! GraphFlow is a tool to create a graph and view it via a step-by-step workflow mode.","size":{"height":216,"width":407}},"width":407,"height":216,"selected":false,"positionAbsolute":{"x":251.91820837390452,"y":-279.3378773125608},"dragging":false},{"id":"2","type":"graphNode","position":{"x":396.31937682570583,"y":56.55306718597856},"data":{"label":"To Add new nodes, There are two methods:","htmlData":"To Add new nodes, There are two methods:","size":{"height":150,"width":300}},"width":300,"height":150,"selected":false,"positionAbsolute":{"x":396.31937682570583,"y":56.55306718597856},"dragging":false},{"id":"3","type":"graphNode","position":{"x":157.8870496592017,"y":309.0579357351509},"data":{"label":"First, is to click on one of the hooks at the end of one of the nodes and click and drag to an empty space.","htmlData":"First, is to click on one of the hooks at the end of one of the nodes and click and drag to an empty space.","size":{"height":217,"width":303}},"width":303,"height":217,"selected":false,"dragging":false,"positionAbsolute":{"x":157.8870496592017,"y":309.0579357351509}},{"id":"4","type":"graphNode","position":{"x":620.5939629990263,"y":339.9050632911393},"data":{"label":"Second is to right click on an empty space and click \"Add Node\"","htmlData":"Second is to right click on an empty space and click \"Add Node\"","size":{"height":150,"width":300}},"width":300,"height":150,"selected":false,"dragging":false},{"id":"5","type":"graphNode","position":{"x":369.5326192794548,"y":638.9508276533593},"data":{"label":"To edit node text, doubleclick on the node! Go ahead and try it now.","htmlData":"To edit node text, doubleclick on the node! Go ahead and try it now.","size":{"height":150,"width":300}},"width":300,"height":150,"selected":false,"positionAbsolute":{"x":369.5326192794548,"y":638.9508276533593},"dragging":false},{"id":"6","type":"graphNode","position":{"x":378.1012658227852,"y":918.2887049659203},"data":{"label":"While in edit mode, you won't be able to reposition nodes. To leave the edit mode, click on another node or an empty space.","htmlData":"While in edit mode, you won't be able to reposition nodes. To leave the edit mode, click on another node or an empty space.","size":{"height":150,"width":300}},"width":300,"height":150,"selected":false,"positionAbsolute":{"x":378.1012658227852,"y":918.2887049659203},"dragging":false},{"id":"8","type":"graphNode","position":{"x":909.3573515092504,"y":630.3821811100291},"data":{"label":"You'll also notice that when editing a node, a menu appears at the top, try clicking some of the buttons with your text highlighted","htmlData":"You'll also notice that when editing a node, a menu appears at the top, try clicking some of the buttons with your text highlighted","size":{"height":150,"width":300}},"width":300,"height":150,"selected":false,"positionAbsolute":{"x":909.3573515092504,"y":630.3821811100291},"dragging":false},{"id":"11","type":"graphNode","position":{"x":390.9930186984817,"y":1228.8591351644181},"data":{"label":"To delete nodes or edges, click on the nodes and click the delete or backspace key. You can also right click and \"delete node\"","htmlData":"To delete nodes or edges, click on the nodes and click the delete or backspace key. You can also right click and \"delete node\"","size":{"height":150,"width":300}},"width":300,"height":150,"selected":false,"positionAbsolute":{"x":390.9930186984817,"y":1228.8591351644181},"dragging":false},{"id":"12","type":"graphNode","position":{"x":388.60239959928833,"y":1535.1840310373225},"data":{"label":"Finally, to enter workflow mode. Right click on a node and make that your starter node.","htmlData":"Finally, to enter workflow mode. Right click on a node and make that your starter node.","size":{"height":150,"width":300}},"width":300,"height":150,"selected":false,"dragging":false,"positionAbsolute":{"x":388.60239959928833,"y":1535.1840310373225}},{"id":"13","type":"graphNode","position":{"x":902.3960474585268,"y":1379.6679460531088},"data":{"label":"It is highly suggested to construct your graph in a Question, Answer, Question format. Here's an example to the right.","htmlData":"It is highly suggested to construct your graph in a Question, Answer, Question format. Here's an example to the right.","size":{"height":150,"width":300}},"width":300,"height":150,"selected":false,"positionAbsolute":{"x":902.3960474585268,"y":1379.6679460531088},"dragging":false},{"id":"14","type":"graphNode","position":{"x":1548.1794492274332,"y":1640.3150801936308},"data":{"label":"How are you doing today?","htmlData":"How are you doing today?","size":{"height":150,"width":300}},"width":300,"height":150,"selected":false,"positionAbsolute":{"x":1548.1794492274332,"y":1640.3150801936308},"dragging":false},{"id":"15","type":"graphNode","position":{"x":1553.9878885752353,"y":1921.678647705406},"data":{"label":"Great!","htmlData":"Great!","size":{"height":150,"width":300}},"width":300,"height":150,"selected":false,"positionAbsolute":{"x":1553.9878885752353,"y":1921.678647705406},"dragging":false},{"id":"16","type":"graphNode","position":{"x":1965.6516218401111,"y":1648.334458962109},"data":{"label":"Bad :(","htmlData":"Bad :(","size":{"height":150,"width":300}},"width":300,"height":150,"selected":false,"positionAbsolute":{"x":1965.6516218401111,"y":1648.334458962109},"dragging":false},{"id":"17","type":"graphNode","position":{"x":1119.7419055207808,"y":1639.5328771460113},"data":{"label":"Alright","htmlData":"Alright","size":{"height":150,"width":300}},"width":300,"height":150,"selected":false,"positionAbsolute":{"x":1119.7419055207808,"y":1639.5328771460113},"dragging":false},{"id":"18","type":"graphNode","position":{"x":2366.6672216223224,"y":1651.8151938215774},"data":{"label":"Maybe, eating something would make you happier. What would you like to eat?","htmlData":"Maybe, eating something would make you happier. What would you like to eat?","size":{"height":150,"width":300}},"width":300,"height":150,"selected":false,"positionAbsolute":{"x":2366.6672216223224,"y":1651.8151938215774},"dragging":false},{"id":"19","type":"graphNode","position":{"x":2767.4969729175477,"y":1465.272675489398},"data":{"label":"Pizza","htmlData":"Pizza","size":{"height":150,"width":300}},"width":300,"height":150,"selected":false,"positionAbsolute":{"x":2767.4969729175477,"y":1465.272675489398},"dragging":false},{"id":"20","type":"graphNode","position":{"x":2772.06173146333,"y":1812.8803163704617},"data":{"label":"Hamburgers","htmlData":"Hamburgers","size":{"height":150,"width":300}},"width":300,"height":150,"selected":false,"positionAbsolute":{"x":2772.06173146333,"y":1812.8803163704617},"dragging":false},{"id":"21","type":"graphNode","position":{"x":1557.9319174126745,"y":2201.6851160638325},"data":{"label":"Keep up the great work!","htmlData":"Keep up the great work!","size":{"height":150,"width":300}},"width":300,"height":150,"selected":false,"dragging":false,"positionAbsolute":{"x":1557.9319174126745,"y":2201.6851160638325}},{"id":"23","type":"graphNode","position":{"x":1541.2419894051259,"y":1365.9748264820305},"data":{"label":"Try right clicking the below node and click set starter node. Then go to the top and go to display -&gt; workflow viewer","htmlData":"Try right clicking the below node and click set starter node. Then go to the top and go to display -&gt; workflow viewer","size":{"height":208,"width":342}},"width":300,"height":150,"selected":true,"positionAbsolute":{"x":1541.2419894051259,"y":1365.9748264820305},"dragging":false},{"id":"24","type":"graphNode","position":{"x":3267.083034569467,"y":1465.5864967245147},"data":{"label":"Cowabunga dude","htmlData":"Cowabunga dude","size":{"height":150,"width":300}},"width":300,"height":150,"selected":false,"positionAbsolute":{"x":3267.083034569467,"y":1465.5864967245147},"dragging":false},{"id":"25","type":"graphNode","position":{"x":391.51580992622934,"y":1925.4004702157486},"data":{"label":"Great you're all set! Tons of other features are coming soon!","htmlData":"Great you're all set! Tons of other features are coming soon!","size":{"height":150,"width":300}},"width":300,"height":150,"selected":false,"positionAbsolute":{"x":391.51580992622934,"y":1925.4004702157486},"dragging":false}]
+const initialNodes = [
+  {
+    id: "1",
+    type: "graphNode",
+    position: { x: 251.91820837390452, y: -279.3378773125608 },
+    data: {
+      label:
+        "Hi!&nbsp;Welcome to GraphFlow! GraphFlow is a tool to create a graph and view it via a step-by-step workflow mode.",
+      htmlData:
+        "Hi! Welcome to GraphFlow! GraphFlow is a tool to create a graph and view it via a step-by-step workflow mode.",
+      size: { height: 216, width: 407 },
+    },
+    width: 407,
+    height: 216,
+    selected: false,
+    positionAbsolute: { x: 251.91820837390452, y: -279.3378773125608 },
+    dragging: false,
+  },
+  {
+    id: "2",
+    type: "graphNode",
+    position: { x: 396.31937682570583, y: 56.55306718597856 },
+    data: {
+      label: "To Add new nodes, There are two methods:",
+      htmlData: "To Add new nodes, There are two methods:",
+      size: { height: 150, width: 300 },
+    },
+    width: 300,
+    height: 150,
+    selected: false,
+    positionAbsolute: { x: 396.31937682570583, y: 56.55306718597856 },
+    dragging: false,
+  },
+  {
+    id: "3",
+    type: "graphNode",
+    position: { x: 157.8870496592017, y: 309.0579357351509 },
+    data: {
+      label:
+        "First, is to click on one of the hooks at the end of one of the nodes and click and drag to an empty space.",
+      htmlData:
+        "First, is to click on one of the hooks at the end of one of the nodes and click and drag to an empty space.",
+      size: { height: 217, width: 303 },
+    },
+    width: 303,
+    height: 217,
+    selected: false,
+    dragging: false,
+    positionAbsolute: { x: 157.8870496592017, y: 309.0579357351509 },
+  },
+  {
+    id: "4",
+    type: "graphNode",
+    position: { x: 620.5939629990263, y: 339.9050632911393 },
+    data: {
+      label: 'Second is to right click on an empty space and click "Add Node"',
+      htmlData:
+        'Second is to right click on an empty space and click "Add Node"',
+      size: { height: 150, width: 300 },
+    },
+    width: 300,
+    height: 150,
+    selected: false,
+    dragging: false,
+  },
+  {
+    id: "5",
+    type: "graphNode",
+    position: { x: 369.5326192794548, y: 638.9508276533593 },
+    data: {
+      label:
+        "To edit node text, doubleclick on the node! Go ahead and try it now.",
+      htmlData:
+        "To edit node text, doubleclick on the node! Go ahead and try it now.",
+      size: { height: 150, width: 300 },
+    },
+    width: 300,
+    height: 150,
+    selected: false,
+    positionAbsolute: { x: 369.5326192794548, y: 638.9508276533593 },
+    dragging: false,
+  },
+  {
+    id: "6",
+    type: "graphNode",
+    position: { x: 378.1012658227852, y: 918.2887049659203 },
+    data: {
+      label:
+        "While in edit mode, you won't be able to reposition nodes. To leave the edit mode, click on another node or an empty space.",
+      htmlData:
+        "While in edit mode, you won't be able to reposition nodes. To leave the edit mode, click on another node or an empty space.",
+      size: { height: 150, width: 300 },
+    },
+    width: 300,
+    height: 150,
+    selected: false,
+    positionAbsolute: { x: 378.1012658227852, y: 918.2887049659203 },
+    dragging: false,
+  },
+  {
+    id: "8",
+    type: "graphNode",
+    position: { x: 909.3573515092504, y: 630.3821811100291 },
+    data: {
+      label:
+        "You'll also notice that when editing a node, a menu appears at the top, try clicking some of the buttons with your text highlighted",
+      htmlData:
+        "You'll also notice that when editing a node, a menu appears at the top, try clicking some of the buttons with your text highlighted",
+      size: { height: 150, width: 300 },
+    },
+    width: 300,
+    height: 150,
+    selected: false,
+    positionAbsolute: { x: 909.3573515092504, y: 630.3821811100291 },
+    dragging: false,
+  },
+  {
+    id: "11",
+    type: "graphNode",
+    position: { x: 390.9930186984817, y: 1228.8591351644181 },
+    data: {
+      label:
+        'To delete nodes or edges, click on the nodes and click the delete or backspace key. You can also right click and "delete node"',
+      htmlData:
+        'To delete nodes or edges, click on the nodes and click the delete or backspace key. You can also right click and "delete node"',
+      size: { height: 150, width: 300 },
+    },
+    width: 300,
+    height: 150,
+    selected: false,
+    positionAbsolute: { x: 390.9930186984817, y: 1228.8591351644181 },
+    dragging: false,
+  },
+  {
+    id: "12",
+    type: "graphNode",
+    position: { x: 388.60239959928833, y: 1535.1840310373225 },
+    data: {
+      label:
+        "Finally, to enter workflow mode. Right click on a node and make that your starter node.",
+      htmlData:
+        "Finally, to enter workflow mode. Right click on a node and make that your starter node.",
+      size: { height: 150, width: 300 },
+    },
+    width: 300,
+    height: 150,
+    selected: false,
+    dragging: false,
+    positionAbsolute: { x: 388.60239959928833, y: 1535.1840310373225 },
+  },
+  {
+    id: "13",
+    type: "graphNode",
+    position: { x: 902.3960474585268, y: 1379.6679460531088 },
+    data: {
+      label:
+        "It is highly suggested to construct your graph in a Question, Answer, Question format. Here's an example to the right.",
+      htmlData:
+        "It is highly suggested to construct your graph in a Question, Answer, Question format. Here's an example to the right.",
+      size: { height: 150, width: 300 },
+    },
+    width: 300,
+    height: 150,
+    selected: false,
+    positionAbsolute: { x: 902.3960474585268, y: 1379.6679460531088 },
+    dragging: false,
+  },
+  {
+    id: "14",
+    type: "graphNode",
+    position: { x: 1548.1794492274332, y: 1640.3150801936308 },
+    data: {
+      label: "How are you doing today?",
+      htmlData: "How are you doing today?",
+      size: { height: 150, width: 300 },
+    },
+    width: 300,
+    height: 150,
+    selected: false,
+    positionAbsolute: { x: 1548.1794492274332, y: 1640.3150801936308 },
+    dragging: false,
+  },
+  {
+    id: "15",
+    type: "graphNode",
+    position: { x: 1553.9878885752353, y: 1921.678647705406 },
+    data: {
+      label: "Great!",
+      htmlData: "Great!",
+      size: { height: 150, width: 300 },
+    },
+    width: 300,
+    height: 150,
+    selected: false,
+    positionAbsolute: { x: 1553.9878885752353, y: 1921.678647705406 },
+    dragging: false,
+  },
+  {
+    id: "16",
+    type: "graphNode",
+    position: { x: 1965.6516218401111, y: 1648.334458962109 },
+    data: {
+      label: "Bad :(",
+      htmlData: "Bad :(",
+      size: { height: 150, width: 300 },
+    },
+    width: 300,
+    height: 150,
+    selected: false,
+    positionAbsolute: { x: 1965.6516218401111, y: 1648.334458962109 },
+    dragging: false,
+  },
+  {
+    id: "17",
+    type: "graphNode",
+    position: { x: 1119.7419055207808, y: 1639.5328771460113 },
+    data: {
+      label: "Alright",
+      htmlData: "Alright",
+      size: { height: 150, width: 300 },
+    },
+    width: 300,
+    height: 150,
+    selected: false,
+    positionAbsolute: { x: 1119.7419055207808, y: 1639.5328771460113 },
+    dragging: false,
+  },
+  {
+    id: "18",
+    type: "graphNode",
+    position: { x: 2366.6672216223224, y: 1651.8151938215774 },
+    data: {
+      label:
+        "Maybe, eating something would make you happier. What would you like to eat?",
+      htmlData:
+        "Maybe, eating something would make you happier. What would you like to eat?",
+      size: { height: 150, width: 300 },
+    },
+    width: 300,
+    height: 150,
+    selected: false,
+    positionAbsolute: { x: 2366.6672216223224, y: 1651.8151938215774 },
+    dragging: false,
+  },
+  {
+    id: "19",
+    type: "graphNode",
+    position: { x: 2767.4969729175477, y: 1465.272675489398 },
+    data: {
+      label: "Pizza",
+      htmlData: "Pizza",
+      size: { height: 150, width: 300 },
+    },
+    width: 300,
+    height: 150,
+    selected: false,
+    positionAbsolute: { x: 2767.4969729175477, y: 1465.272675489398 },
+    dragging: false,
+  },
+  {
+    id: "20",
+    type: "graphNode",
+    position: { x: 2772.06173146333, y: 1812.8803163704617 },
+    data: {
+      label: "Hamburgers",
+      htmlData: "Hamburgers",
+      size: { height: 150, width: 300 },
+    },
+    width: 300,
+    height: 150,
+    selected: false,
+    positionAbsolute: { x: 2772.06173146333, y: 1812.8803163704617 },
+    dragging: false,
+  },
+  {
+    id: "21",
+    type: "graphNode",
+    position: { x: 1557.9319174126745, y: 2201.6851160638325 },
+    data: {
+      label: "Keep up the great work!",
+      htmlData: "Keep up the great work!",
+      size: { height: 150, width: 300 },
+    },
+    width: 300,
+    height: 150,
+    selected: false,
+    dragging: false,
+    positionAbsolute: { x: 1557.9319174126745, y: 2201.6851160638325 },
+  },
+  {
+    id: "23",
+    type: "graphNode",
+    position: { x: 1541.2419894051259, y: 1365.9748264820305 },
+    data: {
+      label:
+        "Try right clicking the below node and click set starter node. Then go to the top and go to display -&gt; workflow viewer",
+      htmlData:
+        "Try right clicking the below node and click set starter node. Then go to the top and go to display -&gt; workflow viewer",
+      size: { height: 208, width: 342 },
+    },
+    width: 300,
+    height: 150,
+    selected: true,
+    positionAbsolute: { x: 1541.2419894051259, y: 1365.9748264820305 },
+    dragging: false,
+  },
+  {
+    id: "24",
+    type: "graphNode",
+    position: { x: 3267.083034569467, y: 1465.5864967245147 },
+    data: {
+      label: "Cowabunga dude",
+      htmlData: "Cowabunga dude",
+      size: { height: 150, width: 300 },
+    },
+    width: 300,
+    height: 150,
+    selected: false,
+    positionAbsolute: { x: 3267.083034569467, y: 1465.5864967245147 },
+    dragging: false,
+  },
+  {
+    id: "25",
+    type: "graphNode",
+    position: { x: 391.51580992622934, y: 1925.4004702157486 },
+    data: {
+      label: "Great you're all set! Tons of other features are coming soon!",
+      htmlData: "Great you're all set! Tons of other features are coming soon!",
+      size: { height: 150, width: 300 },
+    },
+    width: 300,
+    height: 150,
+    selected: false,
+    positionAbsolute: { x: 391.51580992622934, y: 1925.4004702157486 },
+    dragging: false,
+  },
+];
 export default initialNodes;

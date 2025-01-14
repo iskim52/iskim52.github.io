@@ -2,7 +2,7 @@ import React, {
 	Component } from 'react';
 import WorkflowComponent from './WorkflowComponent';
 
-class WorkFlowView extends Component {
+class WorkflowView extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
@@ -32,4 +32,4 @@ class WorkFlowView extends Component {
 
 	}
 }
-export default WorkFlowView;
+export default WorkflowView;

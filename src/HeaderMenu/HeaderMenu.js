@@ -10,6 +10,7 @@ import {
 import NewFile from './Actions/NewFile';
 import OpenFile from './Actions/OpenFile';
 import SaveFile from './Actions/SaveFile';
+import Export from './Actions/Export';
 import useStore from '../store.tsx';
 
 
@@ -32,6 +33,9 @@ export default function HeaderMenu(props) {
             Save
           </MenuItem>
           <MenuDivider className="menuDivider" />
+          <MenuItem onClick={() => SaveFile()}>
+            Export as Static WebPage
+          </MenuItem>
           <MenuItem>Convert from Draw.io</MenuItem>
       </Menu>
       <Menu 

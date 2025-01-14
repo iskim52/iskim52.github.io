@@ -10,7 +10,7 @@ import {
 //imports from files
 import Flow from './Flow';
 import HeaderMenu from './HeaderMenu/HeaderMenu';
-import WorkFlowView from './WorkFlowView/WorkflowView';
+import WorkflowView from './WorkflowView/WorkflowView.js';
 import ContextMenu from './ContextMenu/ContextMenu';
 import NodeEditMenu from './NodeEditMenu/NodeEditMenu';
 import useStore from './store.tsx'
@@ -47,7 +47,7 @@ const App = () => {
         <header className={'headerClass headerClass_' + headerTheme}>
           <HeaderMenu setDisplayView={setDisplayView} />
         </header>
-        <WorkFlowView starterNode={starterNode} />
+        <WorkflowView starterNode={starterNode} />
         <ContextMenu setStarterNode = {setStarterNode} />
       </div>
     )

@@ -24,6 +24,7 @@ import initialEdges from './InitialData/edges';
 type RFState = {
   nodes: Node[];
   edges: Edge[];
+  starternode: number | null,
   currentid: number,
   clickednode: number | null,
   onNodesChange: OnNodesChange;
@@ -32,16 +33,40 @@ type RFState = {
   gradientOn: string;
   headerTheme: string;
   backgroundOn: boolean;
+
+  getStarterNode: () => number | null;
 };
 
 const useStore = create<RFState>((set,get) => ({
   nodes: initialNodes,
   edges: initialEdges,
+  starternode: null,
   currentid: initialNodes.length,
   clickednode: null,
   gradientOn: 'on',
   headerTheme: 'dark',
   backgroundOn: false,
+  
+
+  initialize: (data) => set(() => ({
+    nodes: data.nodes || [],
+    edges: data.edges || [],
+    currentid: data.nodes ? data.nodes.length : 0,
+    clickednode: null,
+    gradientOn: 'on',
+    headerTheme: 'dark',
+    backgroundOn: false,
+    starternode: data.starterNode || null,
+  })),
+
+  setStarterNode: (node: number) => {
+    set({
+      starternode: node
+    })
+  },
+  getStarterNode: () => {
+    return get().starternode
+  },
 
   setBackgroundOn: (status: boolean) => {
     set({
@@ -200,6 +225,7 @@ const useStore = create<RFState>((set,get) => ({
     return({
       nodes: get().nodes,
       edges: get().edges,
+      starternode: get().starternode,
     })
   },
 }))

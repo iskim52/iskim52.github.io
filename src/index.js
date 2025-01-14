@@ -13,10 +13,30 @@ import '@szhsin/react-menu/dist/index.css';
 import "@szhsin/react-menu/dist/theme-dark.css";
 
 import App from "./App";
+import Viewer from "./Viewer";
 
+// const root = createRoot(document.getElementById("root"));
+// root.render(
+//   <StrictMode>
+//     <App />
+//   </StrictMode>
+// );
+
+
+// Detect viewer mode via URL parameter
+const isViewerMode = window.location.search.includes("viewer=true");
 const root = createRoot(document.getElementById("root"));
-root.render(
-  <StrictMode>
-    <App />
-  </StrictMode>
-);
+
+if (isViewerMode) {
+  root.render(
+    <StrictMode>
+      <Viewer />
+    </StrictMode>
+  );
+} else {
+  root.render(
+    <StrictMode>
+      <App />
+    </StrictMode>
+  );
+}
